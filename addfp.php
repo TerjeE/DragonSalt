@@ -1,9 +1,32 @@
 <?php
-if(!empty($_POST['type'])) {
-    foreach($_POST['type'] as $type) {
-        echo $type; //echoes the value set in the HTML form for each checked checkbox.
-        //so, if I were to check 1, 3, and 5 it would echo value 1, value 3, value 5.
-        //in your case, it would echo whatever $row['Report ID'] is equivalent to.
+$con=mysqli_connect("localhost","moderator","ftyujnbv","barista");
+// Check connection
+if (mysqli_connect_errno()) {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+echo "Connection established";
+if(!empty($_POST['tilbehor_id'])) {
+    $sql="INSERT INTO `ferdigprodukt`(`fp_navn`, `produkt_id`) VALUES ('ferdigprodukt',1)";
+    if (!mysqli_query($con,$sql)) {
+        die('Error: ' . mysqli_error($con));
+    }
+    echo " Added test_ferdigprodukt ";
+    echo  mysqli_insert_id($con);
+    echo "<br>";
+    $fp_id = mysqli_insert_id($con);
+
+
+
+
+    foreach($_POST['tilbehor_id'] as $tilbehor_id) {
+        echo "<br>";
+        $sql="INSERT INTO `fp_tilbehor`(`fp_id`, `tilbehor_id`) VALUES ($fp_id,$tilbehor_id)";
+        if (!mysqli_query($con,$sql)) {
+            die('Error: ' . mysqli_error($con));
+        }
+        echo "Added " . $fp_id . " and " . $tilbehor_id . " to db. <br>";
+
+
     }
 }
 

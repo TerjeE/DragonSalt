@@ -72,7 +72,7 @@ echo "<br>Printer produkt under kategori"
 			//while($row_typer = mysqli_fetch_array($typer)){
 				
 				echo "<td>";
-				echo "<input type='checkbox' name='type[]' value='".$row_tilb['tilbehor_navn']."'>";
+				echo "<input type='checkbox' name='tilbehor_id[]' value='".$row_tilb['tilbehor_id']."'>";
 				echo $row_tilb['tilbehor_navn'];
 				echo "</input>";
 				echo "</td>";
