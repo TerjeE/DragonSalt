@@ -52,7 +52,7 @@ echo "<br>Printer produkt under kategori"
 	$valgt_prod_id = 1;
 	$valgt_prod_id_query = mysqli_query($con,"SELECT * FROM produkt WHERE produkt_id = $valgt_prod_id");
 	$data=mysqli_fetch_assoc($valgt_prod_id_query);
-	echo "<form>";
+	echo "<form action='addfp.php' method='post'>";
 	echo $data['produkt_navn'];
 
 	echo "<table border='1'>";
@@ -72,7 +72,7 @@ echo "<br>Printer produkt under kategori"
 			//while($row_typer = mysqli_fetch_array($typer)){
 				
 				echo "<td>";
-				echo "<input type='checkbox' name='type' value='".$row_tilb['tilbehor_navn']."'>";
+				echo "<input type='checkbox' name='type[]' value='".$row_tilb['tilbehor_navn']."'>";
 				echo $row_tilb['tilbehor_navn'];
 				echo "</input>";
 				echo "</td>";
