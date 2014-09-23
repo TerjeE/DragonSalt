@@ -24,37 +24,30 @@
                 echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
             }
 
+            $mysqli->query("INSERT INTO barista.produkt(produkt_navn,kat_id)VALUES ('Phpkaffe' , 1)");
 
-            //$table = $mysqli->query("");
+            $tables = $mysqli->query("SHOW TABLES FROM barista");
 
+            while($mainTable = mysqli_fetch_array($tables))
+            {
+                $attributes = $mysqli->query("SELECT * FROM " . $mainTable[0]);
 
-                //$result = $mysqli->query("SELECT * FROM produkt");
-                //echo "<table>";
+                echo "<h6>" . $mainTable[0] . "</h6>";
 
-                //while($produktnavn = mysqli_fetch_array($result))
-                //{
-                //    echo "<tr><td>" . $produktnavn['produkt_navn'] . "</td></tr>";
-                //}
+                echo mysqli_fetch_field($attribute);
 
-
-                for($i=0;$i<9;$i++){
-                    for($j=$i+1;$j<10;$j++){
-                        echo($i . " " . $j . "<br>");
-                    }
-                }
-                echo("OMGOMGOMGOMOGMOGMGMG<br>");
-
-                function f($i,$j)
+                while($attribute = mysqli_fetch_array($attributes))
                 {
-                   echo($i . " " . $j . "<br>");
-                   if($j>=9 && $i<8) {
-                       f($i+1,$i+2);
-                   }
-                   else if($j<9){
-                       f($i,$j+1);
-                   }
+                    echo $attribute[0];
+
+                    echo "<br>";
                 }
-                f(0,1);
+                echo "<br>";
+                echo "<br>";
+            }
+
+            $mysqli->query("DELETE FROM barista.produkt WHERE produkt_navn='Phpkaffe'");
+
 
             ?>
 
