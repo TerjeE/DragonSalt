@@ -25,6 +25,14 @@ echo "<br>Printer produkt under kategori"
 	
 		echo "<table border='1'>";
 		echo "<caption> " . $kat['Kat_navn'] . "</caption>";
+        echo "<tr>";
+        echo "<td>";
+        echo "Produkt navn";
+        echo "</td>";
+        echo "<td>";
+        echo "id";
+        echo "</td>";
+        echo "</tr>";
 		
 
 		$prod_i_kat = mysqli_query($con,"SELECT * FROM produkt WHERE kat_id=" . $kat['kat_id'] . "");
@@ -33,7 +41,10 @@ echo "<br>Printer produkt under kategori"
 			echo "<tr>";
 			echo "<td>";
 			echo $prod['produkt_navn'];
-			echo "</td>";
+            echo "</td>";
+            echo "<td>";
+            echo $prod['produkt_id'];
+            echo "</td>";
 			echo "</tr>";
 		}
 
