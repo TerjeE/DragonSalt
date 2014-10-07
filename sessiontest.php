@@ -42,6 +42,7 @@ include_once("config.php");
                 echo "</td>";
 
                 echo "</tr>";
+                echo "</form>";
             }
 
         echo "</table>";

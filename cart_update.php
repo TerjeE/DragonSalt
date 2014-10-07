@@ -12,7 +12,6 @@ if(isset($_GET["emptycart"]) && $_GET["emptycart"]==1){
 if(isset($_POST["type"]) && $_POST["type"]=='add'){
     $produkt_id =   filter_var($_POST["produkt_id"], FILTER_SANITIZE_STRING); //produkt_id
     $return_url = base64_decode($_POST["return_url"]); //return_url
-
     $results = mysqli_query($con,"SELECT produkt_navn FROM produkt WHERE produkt_id='$produkt_id' LIMIT 1");
     $obj = mysqli_fetch_assoc($results);
     if($results){ //We have the product info
