@@ -15,7 +15,8 @@ echo "<br>Tables imported";
 
 echo "<br>Printer produkt under kategori"
 ?>
-<br>..
+<br>
+<br>
 <div id="produkt">
 
 	Produkt list
