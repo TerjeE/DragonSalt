@@ -90,6 +90,7 @@ echo "<br>Printer produkt under kategori"
 	}
 	echo "</table>";
 	echo "<input type='submit' value='Legg til'>";
+    echo "<input type='reset' name='reset' value='Reset'>";
 	echo "</form>";
 	?>
 
