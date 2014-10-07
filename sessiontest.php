@@ -67,7 +67,7 @@ include_once("config.php");
                 echo '</li>';
             }
             echo '</ol>';
-            echo '<span class="check-out-txt"><strong>Total : '.$currency.$total.'</strong> <a href="view_cart.php">Check-out!</a></span>';
+            echo '</strong> <a href="view_cart.php">Check-out!</a></span>';
             echo '<span class="empty-cart"><a href="cart_update.php?emptycart=1&return_url='.$current_url.'">Empty Cart</a></span>';
         }else{
         echo 'Your Cart is empty';
