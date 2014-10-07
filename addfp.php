@@ -5,6 +5,7 @@ if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 echo "Connection established";
+echo $_POST['prod_id'];
 if(!empty($_POST['tilbehor_id'])) {
     $sql="INSERT INTO `ferdigprodukt`(`fp_navn`, `produkt_id`) VALUES ('ferdigprodukt',1)";
     if (!mysqli_query($con,$sql)) {

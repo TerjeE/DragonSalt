@@ -27,7 +27,7 @@ echo "<br>Printer produkt under kategori"
 		echo "<caption> " . $kat['Kat_navn'] . "</caption>";
 		
 
-		$prod_i_kat = mysqli_query($con,"SELECT * FROM produkt WHERE " . $kat['kat_id'] . "");
+		$prod_i_kat = mysqli_query($con,"SELECT * FROM produkt WHERE kat_id=" . $kat['kat_id'] . "");
 		while($prod = mysqli_fetch_array($prod_i_kat)){
 			//Printer ut produktene i valgt kategori
 			echo "<tr>";
@@ -49,11 +49,17 @@ echo "<br>Printer produkt under kategori"
 <div>
 	<?php
 	//Eksempel på popup
-	$valgt_prod_id = 1;
+	$valgt_prod_id = 2;
+
+
 	$valgt_prod_id_query = mysqli_query($con,"SELECT * FROM produkt WHERE produkt_id = $valgt_prod_id");
 	$data=mysqli_fetch_assoc($valgt_prod_id_query);
 	echo "<form action='addfp.php' method='post'>";
-	echo $data['produkt_navn'];
+	//echo $data['produkt_navn'];
+    $kat_count = mysqli_fetch_assoc(mysqli_query($con,"SELECT COUNT(*) AS antall FROM produkt"))['antall'];
+    echo "Velg produkt: 1-";
+    echo $kat_count;
+    echo "<input type='number' name='prod_id' min='1' max='$kat_count'>";
 
 	echo "<table border='1'>";
 	while($ty = mysqli_fetch_array($type)){
