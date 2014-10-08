@@ -42,10 +42,10 @@ echo "<br>Printer produkt under kategori"
 			echo "<tr>";
 			echo "<td>";
 			echo $prod['produkt_navn'];
-            echo "</td>";
-            echo "<td>";
-            echo $prod['produkt_id'];
-            echo "</td>";
+                        echo "</td>";
+                        echo "<td>";
+                        echo $prod['produkt_id'];
+                        echo "</td>";
 			echo "</tr>";
 		}
 
