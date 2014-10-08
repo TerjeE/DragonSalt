@@ -6,7 +6,19 @@ if (mysqli_connect_errno()) {
 }
 echo "Connection established";
 if(!empty($_POST['prod_id'])) {
-    $sql="INSERT INTO `ferdigprodukt`(`fp_navn`, `produkt_id`) VALUES ('ferdigprodukt', $_POST[prod_id])";
+    $navn=mysqli_query($con,"SELECT produkt_navn FROM produkt where produkt_id=$_POST[prod_id]");
+    
+    $test =mysqli_fetch_assoc($navn);
+    $produkt_navn = $test['produkt_navn'];
+    echo $produkt_navn;
+    
+    $sql="INSERT INTO `ferdigprodukt`(`fp_navn`, `produkt_id`) VALUES ('$produkt_navn', $_POST[prod_id])";
+    echo "<br>";
+    echo "<br>";
+    echo $sql;
+    echo "<br>";
+    echo "<br>";
+    
     if (!mysqli_query($con,$sql)) {
         die('Error: ' . mysqli_error($con));
     }
