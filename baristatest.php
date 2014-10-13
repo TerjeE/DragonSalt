@@ -15,7 +15,8 @@ echo "<br>Tables imported";
 
 echo "<br>Printer produkt under kategori"
 ?>
-<br>..
+<br>
+<br>
 <div id="produkt">
 
 	Produkt list
@@ -25,15 +26,26 @@ echo "<br>Printer produkt under kategori"
 	
 		echo "<table border='1'>";
 		echo "<caption> " . $kat['Kat_navn'] . "</caption>";
+        echo "<tr>";
+        echo "<td>";
+        echo "Produkt navn";
+        echo "</td>";
+        echo "<td>";
+        echo "id";
+        echo "</td>";
+        echo "</tr>";
 		
 
-		$prod_i_kat = mysqli_query($con,"SELECT * FROM produkt WHERE " . $kat['kat_id'] . "");
+		$prod_i_kat = mysqli_query($con,"SELECT * FROM produkt WHERE kat_id=" . $kat['kat_id'] . "");
 		while($prod = mysqli_fetch_array($prod_i_kat)){
 			//Printer ut produktene i valgt kategori
 			echo "<tr>";
 			echo "<td>";
 			echo $prod['produkt_navn'];
-			echo "</td>";
+            echo "</td>";
+            echo "<td>";
+            echo $prod['produkt_id'];
+            echo "</td>";
 			echo "</tr>";
 		}
 
@@ -49,11 +61,17 @@ echo "<br>Printer produkt under kategori"
 <div>
 	<?php
 	//Eksempel på popup
-	$valgt_prod_id = 1;
+	$valgt_prod_id = 2;
+
+
 	$valgt_prod_id_query = mysqli_query($con,"SELECT * FROM produkt WHERE produkt_id = $valgt_prod_id");
 	$data=mysqli_fetch_assoc($valgt_prod_id_query);
-	echo "<form>";
-	echo $data['produkt_navn'];
+	echo "<form action='addfp.php' method='post'>";
+	//echo $data['produkt_navn'];
+    $kat_count = mysqli_fetch_assoc(mysqli_query($con,"SELECT COUNT(*) AS antall FROM produkt"))['antall'];
+    echo "Velg produkt: 1-";
+    echo $kat_count;
+    echo "<input type='number' name='prod_id' min='1' max='$kat_count'>";
 
 	echo "<table border='1'>";
 	while($ty = mysqli_fetch_array($type)){
@@ -72,7 +90,7 @@ echo "<br>Printer produkt under kategori"
 			//while($row_typer = mysqli_fetch_array($typer)){
 				
 				echo "<td>";
-				echo "<input type='checkbox' name='type' value='".$row_tilb['tilbehor_navn']."'>";
+				echo "<input type='checkbox' name='tilbehor_id[]' value='".$row_tilb['tilbehor_id']."'>";
 				echo $row_tilb['tilbehor_navn'];
 				echo "</input>";
 				echo "</td>";
@@ -90,6 +108,7 @@ echo "<br>Printer produkt under kategori"
 	}
 	echo "</table>";
 	echo "<input type='submit' value='Legg til'>";
+    echo "<input type='reset' name='reset' value='Reset'>";
 	echo "</form>";
 	?>
 
