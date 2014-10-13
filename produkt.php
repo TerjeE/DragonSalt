@@ -26,7 +26,7 @@ include_once("config.php");
         while ($prod = mysqli_fetch_array($prod_i_kat))
         {
             //Printer ut produktene i valgt kategori
-            echo '<form method="post" action="addfp.php">';
+            echo '<form method="post" action="showpost.php">';
             echo "<table border='1'>";
 
             echo "<tr><td>Produkt navn</td><td>id</td><td>Buy</td></tr>";
@@ -41,6 +41,7 @@ include_once("config.php");
             echo "<td>";
             echo '<button class="add_to_cart"> Add to Cart</button>';
             echo '<input type="hidden" name="produkt_id" value="' . $prod['produkt_id'] . '">';
+            echo '<input type="hidden" name="produkt_navn" value="' . $prod['produkt_navn'] . '">';
             echo '<input type="hidden" name="type" value="add">';
             echo '<input type="hidden" name="return_url" value="' . $current_url . '">';
 
