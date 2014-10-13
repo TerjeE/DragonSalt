@@ -1,0 +1,12 @@
+.shopping-cart {
+    color: black;
+    position: absolute;
+    /*background-color: gray;*/
+    left: 50%;
+}
+
+.produkt {
+    color: black;
+    position: absolute;
+    /*background-color: dimgray;*/
+}
