@@ -7,8 +7,10 @@
     </head>
     <body>
     <?php
-    session_start();
+    include_once("classes.php");
     include_once("config.php");
+    session_start();
+
     ?>
 
 

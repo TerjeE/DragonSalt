@@ -54,12 +54,14 @@
 
                 $tilb = mysqli_query($con, "SELECT * FROM tilbehor WHERE type_id ='" . $ty['type_id'] . "'");
 
+                $_SESSION["tempLastTilbehorNavn"]=array();
                 while ($row_tilb = mysqli_fetch_array($tilb))
                 {
 
                     echo "<input type='checkbox' name='tilbehor_id[]' value='" . $row_tilb['tilbehor_id'] . "'>";
                     echo $row_tilb['tilbehor_navn'];
                     echo "</input>";
+
 
                 }
 
