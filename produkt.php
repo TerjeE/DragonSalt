@@ -1,13 +1,8 @@
-<?php
-session_start();
-include_once("config.php");
-?>
-
 <div class="produkt">
     <?php
 
     $current_url = base64_encode("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
-    echo "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+//    echo "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
     $kategori = mysqli_query($con, "SELECT * FROM kategori");
     $produkt = mysqli_query($con, "SELECT * FROM produkt");
 
@@ -26,7 +21,7 @@ include_once("config.php");
         while ($prod = mysqli_fetch_array($prod_i_kat))
         {
             //Printer ut produktene i valgt kategori
-            echo '<form method="post" action="showpost.php">';
+            echo '<form method="post" action="hk_leggTil.php">';
             echo "<table border='1'>";
 
             echo "<tr><td>Produkt navn</td><td>id</td><td>Buy</td></tr>";

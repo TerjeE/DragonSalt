@@ -5,12 +5,17 @@
 
     <head>
     </head>
-
     <body>
+    <?php
+    session_start();
+    include_once("config.php");
+    ?>
+
 
     <?php
 
-        include_once 'sessiontest.php'
+        include_once 'produkt.php';
+        include_once 'handlekurv.php';
 
     ?>
 
