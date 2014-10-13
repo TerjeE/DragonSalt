@@ -5,14 +5,14 @@ if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 echo "Connection established";
-if(!empty($_POST['prod_id'])) {
-    $navn=mysqli_query($con,"SELECT produkt_navn FROM produkt where produkt_id=$_POST[prod_id]");
+if(!empty($_POST['produkt_id'])) {
+    $navn=mysqli_query($con,"SELECT produkt_navn FROM produkt where produkt_id=$_POST[produkt_id]");
     
     $test =mysqli_fetch_assoc($navn);
     $produkt_navn = $test['produkt_navn'];
     echo $produkt_navn;
     
-    $sql="INSERT INTO `ferdigprodukt`(`fp_navn`, `produkt_id`) VALUES ('$produkt_navn', $_POST[prod_id])";
+    $sql="INSERT INTO `ferdigprodukt`(`fp_navn`, `produkt_id`) VALUES ('$produkt_navn', $_POST[produkt_id])";
     echo "<br>";
     echo "<br>";
     echo $sql;
@@ -26,7 +26,7 @@ if(!empty($_POST['prod_id'])) {
     echo " Added fp_id =  ";
     echo  mysqli_insert_id($con);
     echo " produkt_id = ";
-    echo $_POST['prod_id'];
+    echo $_POST['produkt_id'];
     echo " into ferdigprodukt";
     echo "<br>";
     $fp_id = mysqli_insert_id($con);
