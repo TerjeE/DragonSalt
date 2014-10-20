@@ -2,26 +2,21 @@
     <?php
 
     $current_url = base64_encode("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
-//    echo "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    //    echo "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
     $kategori = mysqli_query($con, "SELECT * FROM kategori");
     $produkt = mysqli_query($con, "SELECT * FROM produkt");
 
 
-
     //Går gjennom kategoriene
-    while ($kat = mysqli_fetch_array($kategori))
-    {
+    while ($kat = mysqli_fetch_array($kategori)) {
         echo "<br>";
         echo "<caption> " . $kat['Kat_navn'] . "</caption>";
 
 
-
-
         $prod_i_kat = mysqli_query($con, "SELECT * FROM produkt WHERE kat_id=" . $kat['kat_id'] . "");
-        while ($prod = mysqli_fetch_array($prod_i_kat))
-        {
+        while ($prod = mysqli_fetch_array($prod_i_kat)) {
             //Printer ut produktene i valgt kategori
-            echo '<form method="post" action="hk_leggTil.php">';
+            echo '<form method="post" action="PHP/hk_leggTil.php">';
             echo "<table border='1'>";
 
             echo "<tr><td>Produkt navn</td><td>id</td><td>Buy</td></tr>";
@@ -46,17 +41,15 @@
             echo "<td>";
 
             $type = mysqli_query($con, "SELECT * FROM type");
-            while ($ty = mysqli_fetch_array($type))
-            {
+            while ($ty = mysqli_fetch_array($type)) {
                 echo "<br>";
                 echo "<b>" . $ty['type_navn'] . "</b>";
                 echo "<br>";
 
                 $tilb = mysqli_query($con, "SELECT * FROM tilbehor WHERE type_id ='" . $ty['type_id'] . "'");
 
-                $_SESSION["tempLastTilbehorNavn"]=array();
-                while ($row_tilb = mysqli_fetch_array($tilb))
-                {
+                $_SESSION["tempLastTilbehorNavn"] = array();
+                while ($row_tilb = mysqli_fetch_array($tilb)) {
 
                     echo "<input type='checkbox' name='tilbehor_id[]' value='" . $row_tilb['tilbehor_id'] . "'>";
                     echo $row_tilb['tilbehor_navn'];
@@ -75,7 +68,6 @@
             echo "</form>";
 
         }
-
 
 
     }

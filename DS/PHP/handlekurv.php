@@ -37,8 +37,8 @@
 
         //Knapper
         echo "<br>";
-        echo '<span class="empty-cart"><a href="cart_update.php?emptycart=1&return_url='.$current_url.'">Empty Cart</a></span>';
-    }else{
+        echo '<span class="empty-cart"><a href="PHP/cart_update.php?emptycart=1&return_url=' . $current_url . '">Empty Cart</a></span>';
+    } else {
         echo "Empty cart";
     }
 
