@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-    <link rel="stylesheet" type="text/css" href="indexStyle.css">
+    <link rel="stylesheet" type="text/css" href="PHP/indexStyle.css">
 
     <head>
     </head>
