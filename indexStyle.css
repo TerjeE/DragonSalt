@@ -1,8 +1,29 @@
-.shopping-cart {
+.hk_frame {
     color: black;
     position: absolute;
-    background-color: lightblue;
+    padding: 10px;
+    background-color: lightskyblue;
     left: 50%;
+}
+
+.hk_produktliste {
+    color: black;
+    padding: 10px;
+    background-color: cornflowerblue;
+}
+.hk_produkt {
+    color: black;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: lightcyan;
+}
+
+.hk_produkt ul {
+    list-style-type: none;
+}
+.hk_produkt ul li {
+    background-color: dodgerblue;
+    margin-top: 10px;
 }
 
 .produkt {
