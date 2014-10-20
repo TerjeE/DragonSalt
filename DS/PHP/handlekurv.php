@@ -4,6 +4,8 @@
     $current_url = base64_encode("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
     if (isset($_SESSION["produkt"])) {
         echo "<div class='hk_produktliste'>";
+
+        $index = 0;
         foreach ($_SESSION["produkt"] as $produkt) {
             echo "<div class='hk_produkt'>";
             echo "<b>";
@@ -30,8 +32,9 @@
                 echo "</li>";
                 echo "</ul>";
             }
+            echo '<span class="fjern-produkt"><a href="PHP/hk_fjern.php?return_url=' . $current_url . '&Hk_index='.$index.'">X</a></span>';
             echo "</div>";
-
+            $index++;
         }
         echo "</div>";
 
