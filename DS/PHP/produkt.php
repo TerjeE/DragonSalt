@@ -10,7 +10,7 @@
     //Går gjennom kategoriene
     while ($kat = mysqli_fetch_array($kategori)) {
         echo "<br>";
-        echo "<caption> " . $kat['Kat_navn'] . "</caption>";
+        echo "<caption class='produktKat'> " . $kat['Kat_navn'] . "</caption>";
 
 
         $prod_i_kat = mysqli_query($con, "SELECT * FROM produkt WHERE kat_id=" . $kat['kat_id'] . "");
@@ -43,7 +43,7 @@
             $type = mysqli_query($con, "SELECT * FROM type");
             while ($ty = mysqli_fetch_array($type)) {
                 echo "<br>";
-                echo "<b>" . $ty['type_navn'] . "</b>";
+                echo "<b class='tilbehorType'>" . $ty['type_navn'] . "</b>";
                 echo "<br>";
 
                 $tilb = mysqli_query($con, "SELECT * FROM tilbehor WHERE type_id ='" . $ty['type_id'] . "'");
