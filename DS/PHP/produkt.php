@@ -17,7 +17,7 @@
         while ($prod = mysqli_fetch_array($prod_i_kat)) {
             //Printer ut produktene i valgt kategori
             echo '<form method="post" action="PHP/hk_leggTil.php">';
-            echo "<div class='et_produkt'>";
+            echo '<div class="et_produkt" onmouseover="openBox("' . $prod["produkt_navn"] . '")">';
 
             echo $prod['produkt_navn'];
 
