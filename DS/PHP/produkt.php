@@ -9,7 +9,7 @@
 
     //Går gjennom kategoriene
     while ($kat = mysqli_fetch_array($kategori)) {
-        echo "<br>";
+
         echo "<caption class='produktKat'> " . $kat['Kat_navn'] . "</caption>";
 
 
@@ -17,54 +17,45 @@
         while ($prod = mysqli_fetch_array($prod_i_kat)) {
             //Printer ut produktene i valgt kategori
             echo '<form method="post" action="PHP/hk_leggTil.php">';
-            echo "<table border='1'>";
+            echo "<div class='et_produkt'>";
 
-            echo "<tr><td>Produkt navn</td><td>id</td><td>Buy</td></tr>";
-            echo "<tr>";
-            echo "<td>";
             echo $prod['produkt_navn'];
-            echo "</td>";
-            echo "<td>";
-            echo $prod['produkt_id'];
-            echo "</td>";
 
-            echo "<td>";
-            echo '<button class="add_to_cart"> Add to Cart</button>';
+            //echo $prod['produkt_id'];
+
+
             echo '<input type="hidden" name="produkt_id" value="' . $prod['produkt_id'] . '">';
             echo '<input type="hidden" name="produkt_navn" value="' . $prod['produkt_navn'] . '">';
             echo '<input type="hidden" name="type" value="add">';
             echo '<input type="hidden" name="return_url" value="' . $current_url . '">';
 
-            echo "</td>";
-
-            echo "</tr>";
-            echo "<td>";
-
+            echo "<div class='tilbehor'>";
             $type = mysqli_query($con, "SELECT * FROM type");
             while ($ty = mysqli_fetch_array($type)) {
-                echo "<br>";
-                echo "<b class='tilbehorType'>" . $ty['type_navn'] . "</b>";
-                echo "<br>";
+                echo "<div class='tilbehorType'>";
+                echo $ty['type_navn'];
 
                 $tilb = mysqli_query($con, "SELECT * FROM tilbehor WHERE type_id ='" . $ty['type_id'] . "'");
 
                 $_SESSION["tempLastTilbehorNavn"] = array();
                 while ($row_tilb = mysqli_fetch_array($tilb)) {
-
-                    echo "<input type='checkbox' name='tilbehor_id[]' value='" . $row_tilb['tilbehor_id'] . "'>";
+                    echo "<div class='tilbehornavn'>";
+                    echo "<input  type='checkbox' name='tilbehor_id[]' value='" . $row_tilb['tilbehor_id'] . "'>";
                     echo $row_tilb['tilbehor_navn'];
                     echo "</input>";
+                    echo "</div>";
 
 
                 }
+                echo "</div>";
 
 
             }
+            echo "</div>";
 
 
-            echo "</td>";
-            echo "</tr>";
-            echo "</table>";
+            echo '<button class="add_to_cart"> Add to Cart</button>';
+            echo "</div>";
             echo "</form>";
 
         }

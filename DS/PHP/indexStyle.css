@@ -33,3 +33,33 @@
     position: absolute;
     /*background-color: dimgray;*/
 }
+
+.et_produkt {
+    background: saddlebrown;
+    margin: 1px;
+    padding: 5px;
+    border: 1px solid;
+    position: relative;
+    min-width: 400px;
+}
+
+.add_to_cart {
+    position: absolute; right: 0; bottom: 0;
+}
+
+
+.tilbehor {
+    background: #B89470;
+}
+
+.tilbehorType {
+    color: blue;
+    background: #FF00FF;
+    margin: 5px;
+}
+
+.tilbehornavn{
+    color: white;
+    background: forestgreen;
+    margin: 5px;
+}
