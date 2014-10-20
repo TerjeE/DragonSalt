@@ -41,6 +41,10 @@ function mcancelclosetime()
         closetimer = null;
     }
 }
+function openBox(produktnavn)
+{
+    document.write(produktnavn);
+}
 
 // close layer when click-out
 document.onclick = mclose;
