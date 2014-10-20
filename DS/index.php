@@ -7,8 +7,8 @@
     </head>
     <body>
     <?php
-    include_once("classes.php");
-    include_once("config.php");
+    include_once("PHP/classes.php");
+    include_once("PHP/config.php");
     session_start();
 
     ?>
@@ -16,8 +16,8 @@
 
     <?php
 
-        include_once 'produkt.php';
-        include_once 'handlekurv.php';
+        include_once 'PHP/produkt.php';
+        include_once 'PHP/handlekurv.php';
 
     ?>
 
