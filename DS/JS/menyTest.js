@@ -41,6 +41,10 @@ function mcancelclosetime()
         closetimer = null;
     }
 }
+function openBox(produktnavn)
+{
+    document.write(produktnavn);
+}
 
 function openBox(produktnavn)
 {
