@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-    <link rel="stylesheet" type="text/css" href="PHP/indexStyle.css">
+    <link rel="stylesheet" type="text/css" href="indexStyle.css">
     <script type="text/javascript" src="JS/menyTest.js"></script>
 
     <head>
