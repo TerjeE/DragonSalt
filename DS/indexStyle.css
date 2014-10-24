@@ -33,10 +33,18 @@
     position: absolute;
     /*background-color: dimgray;*/
 }
+.knapp {
+    background: #935C37;
+    margin: 1px;
+    padding: 5px;
+    border: 1px solid;
+    position: relative;
+    min-width: 400px;
+}
 
 .et_produkt {
     //visibility: hidden;
-    background: saddlebrown;
+    background: #9F9F9F;
     margin: 1px;
     padding: 5px;
     border: 1px solid;
@@ -57,18 +65,18 @@
 
 }
 .tilbehor {
-    background: #B89470;
+    background: #DFDFDF;
 
 }
 
 .tilbehorType {
-    color: blue;
-    background: #FF00FF;
+    color: black;
+    background: #DFDFDF;
     margin: 5px;
 }
 
 .tilbehornavn{
-    color: white;
-    background: forestgreen;
+    color: black;
+    background: #FFFFFF;
     margin: 5px;
 }

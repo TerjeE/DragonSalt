@@ -20,9 +20,13 @@
 
             $dick = $prod['produkt_navn'];
 
-            echo "<div class=\"et_produkt\" onclick=\"openBox('$dick')\">";
+
+            //Knapp
+            echo "<div class=\"knapp\" onclick=\"openBox('$dick')\">";
             echo $dick;
             echo "</div>";
+
+            //popup
             echo "<div class='et_produkt popup' id='$dick'>";
 
             //echo $prod['produkt_navn'];
