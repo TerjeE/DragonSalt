@@ -33,8 +33,8 @@
                 echo "</ul>";
             }
             echo '<span class="fjern-produkt"><a href="PHP/hk_fjern.php?return_url=' . $current_url . '&Hk_index='.$index.'">X</a></span>';
-            echo "</div>";
             $index++;
+            echo "</div>";
         }
         echo "</div>";
 
