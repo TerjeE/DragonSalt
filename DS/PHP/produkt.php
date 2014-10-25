@@ -26,8 +26,12 @@
             echo "<p>";
             echo $dick;
             echo "</p>";
+
             $img = $prod['bilde'];
             echo '<img src="'.$img.'"></img>';
+            echo "<p class=\"beskrivelse\">";
+            echo $prod['beskrivelse'];
+            echo "</p>";
             echo "</div>";
 
             //popup

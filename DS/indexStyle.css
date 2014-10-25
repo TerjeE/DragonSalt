@@ -56,9 +56,17 @@
     border: 1px solid;
     position: relative;
     min-width: 400px;
+    min-height: 300px;
 }
 
 .knapp img{
+    float:left;
+}
+
+.beskrivelse{
+    float:left;
+    margin-left: 20px;
+    max-width: 200px;
 }
 
 
