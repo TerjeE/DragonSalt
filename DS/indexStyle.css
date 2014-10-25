@@ -31,6 +31,12 @@
     margin-top: 10px;
 }
 
+.hk_pris{
+    position: absolute;
+    right: 5px;
+    bottom: 2px;
+}
+
 .fjern-produkt{
     position: absolute; right: 5px; top: 5px;
 

@@ -33,7 +33,7 @@
                 echo "</li>";
                 echo "</ul>";
             }
-            echo "<div class=\"pris\">";
+            echo "<div class=\"hk_pris\">";
             echo $produkt->pris;
             echo " kr";
             $totalpris += $produkt->pris;
@@ -43,9 +43,11 @@
             echo "</div>";
         }
         echo "</div>";
+        echo "<div class=\"totalpris\">";
         echo "Totalpris: ";
         echo $totalpris;
         echo " kr";
+        echo "</div>";
 
         //Knapper
         echo "<br>";
