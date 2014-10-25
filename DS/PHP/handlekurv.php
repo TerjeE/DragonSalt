@@ -6,6 +6,7 @@
         echo "<div class='hk_produktliste'>";
 
         $index = 0;
+        $totalpris = 0;
         foreach ($_SESSION["produkt"] as $produkt) {
             echo "<div class='hk_produkt'>";
             echo "<b>";
@@ -34,12 +35,15 @@
             }
             echo "<div class=\"pris\">";
             echo $produkt->pris;
+            $totalpris += $produkt->pris;
             echo "</div>";
             echo '<span class="fjern-produkt"><a href="PHP/hk_fjern.php?return_url=' . $current_url . '&Hk_index='.$index.'">X</a></span>';
             $index++;
             echo "</div>";
         }
         echo "</div>";
+        echo "Totalpris: ";
+        echo $totalpris;
 
         //Knapper
         echo "<br>";
