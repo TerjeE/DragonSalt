@@ -16,14 +16,14 @@
         $prod_i_kat = mysqli_query($con, "SELECT * FROM produkt WHERE kat_id=" . $kat['kat_id'] . "");
         while ($prod = mysqli_fetch_array($prod_i_kat)) {
             //Printer ut produktene i valgt kategori
-            echo '<form method="post" action="PHP\hk_leggTil.php">';
+            //echo '<form method="post" action="PHP\hk_leggTil.php">';
 
             $dick = $prod['produkt_navn'];
 
 
             //Knapp
             echo "<div class=\"knapp\" onclick=\"openBox('$dick')\">";
-            echo "<p>";
+            echo "<p class=\"produktnavn\">";
             echo $dick;
             echo "</p>";
 
@@ -47,8 +47,7 @@
             echo "</div>";
 
             //echo $prod['produkt_id'];
-
-
+            echo '<form method="post" action="PHP\hk_leggTil.php">';
             echo '<input type="hidden" name="produkt_id" value="' . $prod['produkt_id'] . '">';
             echo '<input type="hidden" name="produkt_navn" value="' . $prod['produkt_navn'] . '">';
             echo '<input type="hidden" name="type" value="add">';
