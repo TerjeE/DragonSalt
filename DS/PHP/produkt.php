@@ -24,6 +24,8 @@
             //Knapp
             echo "<div class=\"knapp\" onclick=\"openBox('$dick')\">";
             echo $dick;
+            $img = $prod['bilde'];
+            echo '<img src="'.$img.'"></img>';
             echo "</div>";
 
             //popup
