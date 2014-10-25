@@ -1,0 +1,66 @@
+<?php
+
+include_once("classes.php");
+include_once("config.php");
+session_start();
+$current_url = base64_encode("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+
+    if (isset($_SESSION["produkt"])) {
+        foreach ($_SESSION["produkt"] as $produkt) {
+            //Legg til produkt i ferdigprodukt
+            $pid = $produkt->pid;
+            $navn = $produkt->navn;
+
+            echo "<b>";
+            echo $navn . "<br>";
+            echo $pid . "<br>";
+            echo "</b>";
+
+            $sql = 'INSERT INTO `ferdigprodukt`(`fp_navn`, `produkt_id`) VALUES ("'.$navn.'", '.$pid.')';
+            echo "<br>";
+            echo $sql;
+            echo "<br>";
+            if (!mysqli_query($con, $sql)) {
+                die('Error: ' . mysqli_error($con));
+            }
+            echo "<br>";
+            $fp_id = mysqli_insert_id($con);
+            echo " Added fp_id =  ";
+            echo $fp_id;
+            echo " produkt_id = ";
+            echo $pid;
+            echo "<br>";
+
+
+
+            if (is_array($produkt->tilbehor)) {
+                //Legg til tilbehor i fp_tilbehor
+                echo "<ul>";
+                foreach ($produkt->tilbehor as $tilbehor_id) {
+                    echo "<li>";
+                    echo $tilbehor_id;
+                    echo "</li>";
+
+
+
+                    $sql = 'INSERT INTO `fp_tilbehor`(`fp_id`, `tilbehor_id`) VALUES ('.$fp_id.','.$tilbehor_id.')';
+                    echo $sql;
+                    if (!mysqli_query($con, $sql)) {
+                        die('Error: ' . mysqli_error($con));
+                    }
+                    echo "<br>Added " . $fp_id . " and " . $tilbehor_id . " to fp_tilbehor. <br>";
+                }
+                echo "</ul>";
+            } else {
+                echo "<ul>";
+                echo "<li>";
+                echo htmlentities("Uten tilbehør");
+                echo "</li>";
+                echo "</ul>";
+            }
+        }
+    } else {
+        echo "Empty cart";
+    }
+
+?>

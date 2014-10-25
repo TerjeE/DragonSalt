@@ -41,6 +41,8 @@
         //Knapper
         echo "<br>";
         echo '<span class="empty-cart"><a href="PHP/cart_update.php?emptycart=1&return_url=' . $current_url . '">Empty Cart</a></span>';
+        echo "<br>";
+        echo '<span class="empty-cart"><a href="PHP/hk_tilfp.php?return_url=' . $current_url . '">Test</a></span>';
     } else {
         echo "Empty cart";
     }

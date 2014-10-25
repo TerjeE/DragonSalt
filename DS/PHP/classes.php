@@ -13,3 +13,4 @@ class produkt
         $this->tilbehor = $tilbehor;
     }
 }
+?>
