@@ -1,12 +1,14 @@
 <?php
 include_once("classes.php");
+include_once("config.php");
 session_start();
 
 
 if (!empty($_POST['produkt_id'])) {
+    $produkt_id = $_POST['produkt_id'];
     echo "produkt_navn: " . $_POST['produkt_navn'];
     echo "<br>";
-    echo "produkt_id: " . $_POST['produkt_id'];
+    echo "produkt_id: " . $produkt_id;
 
     if (!empty($_POST['tilbehor_id'])) {
         $tilbehor = $_POST['tilbehor_id'];
@@ -25,7 +27,29 @@ if (!empty($_POST['produkt_id'])) {
         echo "Ikke noe produkt_navn";
     }
 
-    $prod = new produkt($produkt, $_POST['produkt_id'], $tilbehor);
+
+    //Pris
+    //Pris er sum av tilbehor pris og produkt pris
+    $sql = 'SELECT pris FROM `produkt` WHERE produkt_id="'.$produkt_id.'"';
+    echo "<br>";
+    echo $sql;
+    echo "<br>";
+    if (!($sqlpris = mysqli_query($con, $sql))) {
+        die('Error: ' . mysqli_error($con));
+    }
+    $test = mysqli_fetch_assoc($sqlpris);
+    $produkt_pris = $test['pris'];
+    echo $produkt_pris;
+    $totalpris = $produkt_pris;
+
+    if (is_array($_POST['tilbehor_id'])) {
+        foreach ($_POST['tilbehor_id'] as $tilbehor_id) {
+            $tilbehor_pris = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM tilbehor WHERE tilbehor_id ='$tilbehor_id'"))['pris'];
+            $totalpris += $tilbehor_pris;
+        }
+    }
+
+    $prod = new produkt($produkt, $produkt_id, $tilbehor , $totalpris);
     if (!isset($_SESSION["produkt"])) {
         $_SESSION["produkt"] = array();
         array_push($_SESSION["produkt"], $prod);

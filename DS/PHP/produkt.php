@@ -33,6 +33,10 @@
 
 
             echo $prod['produkt_navn'];
+            echo "<div class=\"produktpris\">";
+            echo $prod['pris'];
+            echo "kr";
+            echo "</div>";
 
             //echo $prod['produkt_id'];
 
@@ -55,6 +59,10 @@
                     echo "<div class='tilbehornavn'>";
                     echo "<input  type='checkbox' name='tilbehor_id[]' value='" . $row_tilb['tilbehor_id'] . "'>";
                     echo $row_tilb['tilbehor_navn'];
+                    echo "<div class=\"tilbehorpris\">";
+                    echo $row_tilb['pris'];
+                    echo "kr";
+                    echo "</div>";
                     echo "</input>";
                     echo "</div>";
 

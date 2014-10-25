@@ -52,6 +52,8 @@
     min-width: 400px;
 }
 
+
+
 .et_produkt {
     background: #9F9F9F;
     margin: 1px;
@@ -64,6 +66,10 @@
 
 .add_to_cart {
     position: absolute; right: 0; bottom: 0;
+}
+
+.produktpris{
+    position: absolute; right: 5px; top: 5px;
 }
 
 .popup {
@@ -89,4 +95,11 @@
     color: black;
     background: #FFFFFF;
     margin: 5px;
+    position: relative;
+}
+
+.tilbehorpris{
+    position: absolute;
+    right: 5px;
+    top: 2px;
 }
