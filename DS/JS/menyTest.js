@@ -48,6 +48,7 @@ function openBox(produktnavn)
 
 function openBox(produktnavn)
 {
+    clicked = 1;
 
     ting = document.getElementById(produktnavn);
     alle = document.getElementsByClassName("popup");
@@ -64,33 +65,39 @@ function openBox(produktnavn)
     }else{
         ting.style.display = "none";
     }
-    event.stopPropagation();
+
 
 }
 
 function openKat(kategorinavn){
     ting = document.getElementById(kategorinavn);
     alle = document.getElementsByClassName("kategori");
-
+    clicked = 1;
     ting.style.display = "block";
     for(var i=0; i<alle.length; i++) {
         if(alle[i] != ting) {
             alle[i].style.display = "none";
         }
     }
-    event.stopPropagation();
+
 }
 
 function htmlClicked(){
-    //hides all popup
-    alle = document.getElementsByClassName("popup");
+    if(clicked == 1){
+        clicked = 0;
+    }else{
+        //hides all popup
+        alle = document.getElementsByClassName("popup");
 
-    for(var i=0; i<alle.length; i++) {
-        alle[i].style.display = "none";
+        for(var i=0; i<alle.length; i++) {
+            alle[i].style.display = "none";
+        }
     }
+
 }
 function popupClicked(){
-    event.stopPropagation();
+    clicked = 1;
+
 }
 
 // close layer when click-out
