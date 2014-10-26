@@ -3,7 +3,7 @@
     position: absolute;
     padding: 10px;
     background-color: lightskyblue;
-    left: 50%;
+    right: 0;
 }
 
 .hk_produktliste {
@@ -16,13 +16,11 @@
     position: relative;
     color: black;
     margin-top: 10px;
-    padding: 10px;
-    padding-top: 20px;
+    padding: 20px 10px 10px;
     background-color: lightcyan;
 }
 
 .hk_produkt ul {
-
     list-style-type: none;
 }
 
@@ -94,8 +92,7 @@
 .et_produkt {
     background: #9F9F9F;
     margin: 1px;
-    padding: 5px;
-    padding-bottom: 20px;
+    padding: 5px 5px 20px;
     border: 1px solid;
     position: relative;
     min-width: 400px;
@@ -114,13 +111,12 @@
     position: fixed;
     top: 50%;
     left: 50%;
+    box-shadow: 3px 3px 0 10000px rgba(0,0,0,.6);
     transform: translate(-50%, -50%);
     z-index: 99;
-
 }
 .tilbehor {
     background: #DFDFDF;
-
 }
 
 .tilbehorType {
