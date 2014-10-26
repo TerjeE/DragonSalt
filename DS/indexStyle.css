@@ -89,7 +89,12 @@
     max-width: 200px;
     margin-top: 0;
 }
-
+.buttons{
+    position: absolute; right: 0; bottom: 0;
+}
+.buttons form{
+    float:right;
+}
 
 .et_produkt {
     background: #9F9F9F;

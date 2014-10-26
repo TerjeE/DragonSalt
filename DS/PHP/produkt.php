@@ -37,7 +37,7 @@
 
 
             //Knapp
-            echo "<div class=\"knapp\" onclick=\"openBox('$dick')\">";
+            echo "<div class=\"knapp\">";
             echo "<p class=\"produktnavn\">";
             echo $dick;
             echo "</p>";
@@ -47,12 +47,33 @@
             echo "<p class=\"beskrivelse\">";
             echo $prod['beskrivelse'];
             echo "</p>";
+
+
+            echo "<div class=\"buttons\">";
+
+            echo $prod['pris'];
+            echo " kr";
+            echo "<button onclick=\"openBox('$dick')\">";
+            echo htmlentities("Med Tilbehør");
+            echo "</button>";
+
+            echo '<form method="post" action="PHP/hk_leggTil.php">';
+            echo '<input type="hidden" name="produkt_id" value="' . $prod['produkt_id'] . '">';
+            echo '<input type="hidden" name="produkt_navn" value="' . $prod['produkt_navn'] . '">';
+            echo '<input type="hidden" name="return_url" value="' . $current_url . '">';
+            echo "<button>";
+            echo htmlentities("Kjøp");
+            echo "</button>";
+            echo "</form>";
+
+
+            echo "</div>";
+
+
             echo "</div>";
 
             //popup
             echo "<div class='et_produkt popup' id='$dick'>";
-
-            //echo $prod['produkt_navn'];
 
 
             echo $prod['produkt_navn'];
@@ -63,11 +84,9 @@
 
 
 
-            //echo $prod['produkt_id'];
             echo '<form method="post" action="PHP/hk_leggTil.php">';
             echo '<input type="hidden" name="produkt_id" value="' . $prod['produkt_id'] . '">';
             echo '<input type="hidden" name="produkt_navn" value="' . $prod['produkt_navn'] . '">';
-            echo '<input type="hidden" name="type" value="add">';
             echo '<input type="hidden" name="return_url" value="' . $current_url . '">';
 
             echo "<div class='tilbehor'>";
@@ -99,7 +118,7 @@
             echo "</div>";
 
 
-            echo '<button class="add_to_cart"> Add to Cart</button>';
+            echo '<button class="add_to_cart">Legg til</button>';
             echo "</div>";
             echo "</form>";
 
