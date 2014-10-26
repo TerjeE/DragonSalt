@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html onclick="htmlClicked()">
 
     <head>
     </head>

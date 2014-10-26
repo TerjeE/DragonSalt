@@ -78,7 +78,7 @@
             echo "</div>";
 
             //popup
-            echo "<div class='et_produkt popup' id='$dick'>";
+            echo "<div class='et_produkt popup' id='$dick' onclick='popupClicked()'>";
 
 
             echo $prod['produkt_navn'];

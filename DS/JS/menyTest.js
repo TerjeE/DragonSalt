@@ -64,6 +64,7 @@ function openBox(produktnavn)
     }else{
         ting.style.display = "none";
     }
+    event.stopPropagation();
 
 }
 
@@ -77,6 +78,19 @@ function openKat(kategorinavn){
             alle[i].style.display = "none";
         }
     }
+    event.stopPropagation();
+}
+
+function htmlClicked(){
+    //hides all popup
+    alle = document.getElementsByClassName("popup");
+
+    for(var i=0; i<alle.length; i++) {
+        alle[i].style.display = "none";
+    }
+}
+function popupClicked(){
+    event.stopPropagation();
 }
 
 // close layer when click-out
