@@ -50,14 +50,7 @@ function openBox(produktnavn)
 {
 
     ting = document.getElementById(produktnavn);
-
     alle = document.getElementsByClassName("popup");
-
-    /*for(var en in alle){
-        if(en!=ting){
-            en.style.display = "none";
-        }
-    }*/
 
     for(var i=0; i<alle.length; i++) {
         if(alle[i] != ting) {
@@ -72,6 +65,18 @@ function openBox(produktnavn)
         ting.style.display = "none";
     }
 
+}
+
+function openKat(kategorinavn){
+    ting = document.getElementById(kategorinavn);
+    alle = document.getElementsByClassName("kategori");
+
+    ting.style.display = "block";
+    for(var i=0; i<alle.length; i++) {
+        if(alle[i] != ting) {
+            alle[i].style.display = "none";
+        }
+    }
 }
 
 // close layer when click-out
