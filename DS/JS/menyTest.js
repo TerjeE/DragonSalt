@@ -72,7 +72,7 @@ function openBox(produktnavn)
 function openKat(kategorinavn){
     ting = document.getElementById(kategorinavn);
     alle = document.getElementsByClassName("kategori");
-    clicked = 1;
+    //clicked = 1;
     ting.style.display = "block";
     for(var i=0; i<alle.length; i++) {
         if(alle[i] != ting) {
