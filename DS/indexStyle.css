@@ -78,6 +78,7 @@
     background: #ae5d23;
     border: solid 1px black;
     padding: 5px;
+    margin-top: 5px;
 }
 .beskrivelse{
     background: #ae5d23;
@@ -86,6 +87,7 @@
     float:left;
     margin-left: 20px;
     max-width: 200px;
+    margin-top: 0;
 }
 
 
