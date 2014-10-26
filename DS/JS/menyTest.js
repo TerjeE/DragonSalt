@@ -11,16 +11,8 @@ function openBox(produktnavn)
 
 function openBox(produktnavn)
 {
-
-    ting = document.getElementById(produktnavn);
-
-    alle = document.getElementsByClassName("popup");
-
-    /*for(var en in alle){
-        if(en!=ting){
-            en.style.display = "none";
-        }
-    }*/
+    var ting = document.getElementById(produktnavn);
+    var alle = document.getElementsByClassName("popup");
 
     for(var i=0; i<alle.length; i++) {
         if(alle[i] != ting) {
@@ -28,12 +20,9 @@ function openBox(produktnavn)
         }
     }
 
-
-
     if(ting.style.display == "none" || (ting.style.display != "none" && ting.style.display != "block")){
         ting.style.display = "block";
     }else{
         ting.style.display = "none";
     }
-
 }
