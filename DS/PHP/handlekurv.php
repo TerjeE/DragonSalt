@@ -2,7 +2,7 @@
 
     <?php
     $current_url = base64_encode("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
-    if (isset($_SESSION["produkt"])) {
+    if (isset($_SESSION["produkt"]) && !empty($_SESSION["produkt"])) {
         echo "<div class='hk_produktliste'>";
 
         $index = 0;
@@ -51,7 +51,7 @@
 
         //Knapper
         echo "<br>";
-        echo '<span class="empty-cart"><a href="PHP/cart_update.php?emptycart=1&return_url=' . $current_url . '">Empty Cart</a></span>';
+        echo '<span class="empty-cart"><a href="PHP/hk_empty.php?emptycart=1&return_url=' . $current_url . '">Empty Cart</a></span>';
         echo "<br>";
         echo '<span class="empty-cart"><a href="PHP/hk_tilfp.php?return_url=' . $current_url . '">Test</a></span>';
     } else {
