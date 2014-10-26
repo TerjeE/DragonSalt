@@ -18,10 +18,14 @@
     }
     //Går gjennom kategoriene
     $kategori = mysqli_query($con, "SELECT * FROM kategori");
-    $iterations = 0;
+    $iterations = 1;
     while ($kat = mysqli_fetch_array($kategori)) {
         $kategorinavn = $kat['Kat_navn'];
-        if($iterations != 0) {
+        $currentkat = 1;
+        if (isset($_SESSION['kat_id'])){
+            $currentkat = $_SESSION['kat_id'];
+        }
+        if($iterations != $currentkat) {
             echo "<div class='kategori' id='$kategorinavn' style='display: none'>";
         }else{
             echo "<div class='kategori' id='$kategorinavn' style='display: block'>";
@@ -61,6 +65,7 @@
             echo '<input type="hidden" name="produkt_id" value="' . $prod['produkt_id'] . '">';
             echo '<input type="hidden" name="produkt_navn" value="' . $prod['produkt_navn'] . '">';
             echo '<input type="hidden" name="return_url" value="' . $current_url . '">';
+            echo '<input type="hidden" name="kat_id" value="' . $kat['kat_id'] . '">';
             echo "<button>";
             echo htmlentities("Kjøp");
             echo "</button>";
@@ -88,6 +93,7 @@
             echo '<input type="hidden" name="produkt_id" value="' . $prod['produkt_id'] . '">';
             echo '<input type="hidden" name="produkt_navn" value="' . $prod['produkt_navn'] . '">';
             echo '<input type="hidden" name="return_url" value="' . $current_url . '">';
+            echo '<input type="hidden" name="kat_id" value="' . $kat['kat_id'] . '">';
 
             echo "<div class='tilbehor'>";
             $type = mysqli_query($con, "SELECT * FROM type");

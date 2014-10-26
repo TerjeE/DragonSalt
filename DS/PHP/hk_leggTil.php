@@ -5,6 +5,8 @@ session_start();
 
 
 if (!empty($_POST['produkt_id'])) {
+    $_SESSION['kat_id']=$_POST['kat_id'];
+
     $produkt_id = $_POST['produkt_id'];
     echo "produkt_navn: " . $_POST['produkt_navn'];
     echo "<br>";
