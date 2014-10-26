@@ -47,7 +47,7 @@
             echo "</div>";
 
             //echo $prod['produkt_id'];
-            echo '<form method="post" action="PHP\hk_leggTil.php">';
+            echo '<form method="post" action="PHP/hk_leggTil.php">';
             echo '<input type="hidden" name="produkt_id" value="' . $prod['produkt_id'] . '">';
             echo '<input type="hidden" name="produkt_navn" value="' . $prod['produkt_navn'] . '">';
             echo '<input type="hidden" name="type" value="add">';
