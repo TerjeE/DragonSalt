@@ -41,10 +41,6 @@ function mcancelclosetime()
         closetimer = null;
     }
 }
-function openBox(produktnavn)
-{
-    document.write(produktnavn);
-}
 
 function openBox(produktnavn)
 {
@@ -70,6 +66,19 @@ function openBox(produktnavn)
         ting.style.display = "block";
     }else{
         ting.style.display = "none";
+    }
+
+}
+
+function openKat(katnavn)
+{
+    ting = document.getElementById(katnavn);
+    alle = document.getElementsByClassName("kategori");
+    ting.style.display = "block";
+    for(var i=0; i<alle.length; i++) {
+        if(alle[i] != ting) {
+            alle[i].style.display = "none";
+        }
     }
 
 }

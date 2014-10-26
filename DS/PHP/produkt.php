@@ -10,7 +10,22 @@
     //Går gjennom kategoriene
     while ($kat = mysqli_fetch_array($kategori)) {
 
+        //Kategori knapp
+        $kategorinavn = $kat['Kat_navn'];
+        echo "<div class=\"kategoriknapp\" onclick=\"openKat('$kategorinavn')\">";
         echo "<caption class='produktKat'> " . $kat['Kat_navn'] . "</caption>";
+        echo "</div>";
+    }
+    //Går gjennom kategoriene
+    $kategori = mysqli_query($con, "SELECT * FROM kategori");
+    $iterations = 0;
+    while ($kat = mysqli_fetch_array($kategori)) {
+        $kategorinavn = $kat['Kat_navn'];
+        if($iterations != 0) {
+            echo "<div class='kategori' id='$kategorinavn' style='display: none'>";
+        }else{
+            echo "<div class='kategori' id='$kategorinavn' style='display: block'>";
+        }
 
 
         $prod_i_kat = mysqli_query($con, "SELECT * FROM produkt WHERE kat_id=" . $kat['kat_id'] . "");
@@ -87,8 +102,9 @@
             echo "</form>";
 
         }
+        echo "</div>";
 
-
+        $iterations++;
     }
     ?>
 
