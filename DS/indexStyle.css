@@ -1,12 +1,16 @@
 body {
     align-content: center;
-    border-radius: 10px;
-    background-color: saddlebrown;
+   //border-radius: 10px;
+    background: -webkit-linear-gradient(to right,#aa6633,#552211, #aa6633); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(to right,#aa6633,#552211, #aa6633); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(to right,#aa6633,#552211, #aa6633); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right,#aa6633,#552211, #aa6633); /* Standard syntax (must be last) */
+    background: linear-gradient(to right,#aa6633,#552211, #aa6633);
 }
 
 button {
-    border-radius: 10px;
-    background-color: greenyellow;
+   //border-radius: 10px;
+    background-color: #cc9966;
     border: none;
     margin-left: 2px;
     margin-bottom: 5px;
@@ -15,7 +19,8 @@ button {
 html{
     width: 100%;
     height: 100%;
-    border-radius: 10px;}
+   //border-radius: 10px;
+}
 
 .hk_frame {
     color: black;
@@ -24,13 +29,15 @@ html{
     position: absolute;
     top: 0;
     right: 0;
-border-radius: 10px;}
+   //border-radius: 10px;
+}
 
 .hk_produktliste {
     color: black;
     padding: 10px;
     background-color: cornflowerblue;
-border-radius: 10px;}
+   //border-radius: 10px;
+}
 
 .hk_produkt {
     position: relative;
@@ -38,32 +45,37 @@ border-radius: 10px;}
     margin-top: 10px;
     padding: 20px 10px 10px;
     background-color: lightcyan;
-border-radius: 10px;}
+   //border-radius: 10px;
+}
 
 .hk_produkt ul {
     list-style-type: none;
-border-radius: 10px;}
+   //border-radius: 10px;
+}
 
 .hk_produkt ul li {
     //border-bottom: 1px solid dodgerblue;
     margin-top: 10px;
-border-radius: 10px;}
+   //border-radius: 10px;
+}
 
 .hk_pris{
     position: absolute;
     right: 5px;
     bottom: 2px;
-border-radius: 10px;}
+   //border-radius: 10px;
+}
 
 .fjern-produkt{
     position: absolute; right: 5px; top: 5px;
 
-border-radius: 10px;}
+   //border-radius: 10px;
+}
 
 .produkt {
 
     color: black;
-    background-color: #C4B3A4;
+    background-color: #552211;
     //border: 2px solid black;
     padding: 5px;
     max-width: 700px;
@@ -71,68 +83,84 @@ border-radius: 10px;}
     //float:left;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 10px;}
+   //border-radius: 10px;
+}
 .kategori {
-    margin-top: 35px;
-    background: #db8027;
+
     //border: 2px solid #49240e;
-border-radius: 10px;}
+   //border-radius: 10px;
+}
 .kategoriknapp {
-    background: #FFFFFF;
+    background: #ffeecc;
     margin: 1px;
     padding: 5px;
     //border: 1px solid;
-    float: left;
     min-width: 100px;
-border-radius: 10px;}
+   //border-radius: 10px;
+    font-size: 2em;
+    display: inline-block;
+}
+.kategoriknapp:hover{
+    background: #eecc99;
+}
 .et_produkt {
-    padding-top: 10px;
-    background: #935C37;
+    background: #eecc99;
     margin: 1px;
     padding: 5px;
     //border: 1px solid;
     position: relative;
     min-width: 400px;
     min-height: 300px;
-border-radius: 10px;}
+   //border-radius: 10px;
+}
 
 .et_produkt img{
     float:left;
     //border: solid 1px black;
-border-radius: 10px;
+   //border-radius: 10px;
 }
 .produktnavn{
-    background: #ae5d23;
     //border: solid 1px black;
     padding: 5px;
     margin-top: 5px;
-border-radius: 10px;}
+    margin-bottom: 5px;
+   //border-radius: 10px;
+    font-size: 1.5em;
+}
 .beskrivelse{
-    background: #ae5d23;
     //border: solid 1px black;
     padding: 5px;
     float:left;
     margin-left: 20px;
     max-width: 200px;
     margin-top: 0;
-border-radius: 10px;}
+   //border-radius: 10px;
+}
 .buttons{
-    position: absolute; right: 0; bottom: 0;
-border-radius: 10px;}
+    position: absolute; right: 5px; bottom: 0;
+    font-size: 2em;
+}
+.buttons button{
+    font-size: 0.50em;
+}
 .buttons form{
     float:right;
-border-radius: 10px;}
+   //border-radius: 10px;
+}
 
 
 .add_to_cart {
     position: absolute; right: 0; bottom: 0;
-border-radius: 10px;}
+   //border-radius: 10px;
+}
 
 .produktpris{
     position: absolute; right: 5px; top: 5px;
-border-radius: 10px;}
+   //border-radius: 10px;
+}
 
 .popup {
+    font-size: 2em;
     display: none;
     position: fixed;
     top: 50%;
@@ -140,32 +168,45 @@ border-radius: 10px;}
     box-shadow: 3px 3px 0 10000px rgba(0,0,0,.6);
     transform: translate(-50%, -50%);
     z-index: 99;
-    background: #9F9F9F;
+    background: #aa6633;
     margin: 1px;
     padding: 5px 5px 20px;
     min-width: 400px;
-    border-radius: 10px;
+   //border-radius: 10px;
 
 }
+
+.popup form button{
+    font-size: 0.8em;
+}
 .tilbehor {
-    background: #DFDFDF;
-border-radius: 10px;}
+
+    background: #cc9966;
+   //border-radius: 10px;
+}
 
 .tilbehorType {
+    font-size: 0.7em;
+
     color: black;
-    background: #DFDFDF;
     margin: 5px;
-border-radius: 10px;}
+   //border-radius: 10px;
+}
 
 .tilbehornavn{
+    font-size: 0.9em;
     color: black;
-    background: #FFFFFF;
+    border-bottom: solid 1px #552211;
     margin: 5px;
     position: relative;
-border-radius: 10px;}
+   //border-radius: 10px;
+}
 
 .tilbehorpris{
     position: absolute;
     right: 5px;
     top: 2px;
-border-radius: 10px;}
+   //border-radius: 10px;
+}
+
+

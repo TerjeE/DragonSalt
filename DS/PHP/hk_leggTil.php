@@ -43,11 +43,13 @@ if (!empty($_POST['produkt_id'])) {
     $produkt_pris = $test['pris'];
     echo $produkt_pris;
     $totalpris = $produkt_pris;
-
-    if (is_array($_POST['tilbehor_id'])) {
-        foreach ($_POST['tilbehor_id'] as $tilbehor_id) {
-            $tilbehor_pris = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM tilbehor WHERE tilbehor_id ='$tilbehor_id'"))['pris'];
-            $totalpris += $tilbehor_pris;
+    if(isset ($_POST['tilbehor_id']))
+    {
+        if (is_array($_POST['tilbehor_id'])) {
+            foreach ($_POST['tilbehor_id'] as $tilbehor_id) {
+                $tilbehor_pris = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM tilbehor WHERE tilbehor_id ='$tilbehor_id'"))['pris'];
+                $totalpris += $tilbehor_pris;
+            }
         }
     }
 
@@ -73,7 +75,7 @@ if (!empty($_POST['produkt_id'])) {
 
     $return_url = base64_decode($_POST["return_url"]); //return_url
 
-    header('Location:' . $return_url);
+    //header('Location:' . $return_url);
 
 
 }
