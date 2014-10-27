@@ -41,7 +41,7 @@
 
 
             //Knapp
-            echo "<div class=\"knapp\">";
+            echo "<div class=\"et_produkt\">";
             echo "<p class=\"produktnavn\">";
             echo $dick;
             echo "</p>";
@@ -78,7 +78,7 @@
             echo "</div>";
 
             //popup
-            echo "<div class='et_produkt popup' id='$dick' onclick='popupClicked()'>";
+            echo "<div class='popup' id='$dick' onclick='popupClicked()'>";
 
 
             echo $prod['produkt_navn'];
