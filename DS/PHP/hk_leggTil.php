@@ -75,7 +75,7 @@ if (!empty($_POST['produkt_id'])) {
 
     $return_url = base64_decode($_POST["return_url"]); //return_url
 
-    //header('Location:' . $return_url);
+    header('Location:' . $return_url);
 
 
 }
