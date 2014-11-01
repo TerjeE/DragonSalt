@@ -24,6 +24,20 @@ if (isset($_POST['username'])) {
         // Set session
         $_SESSION['username'] = $usname;
         $_SESSION['id'] = $uid;
+        // Set a cookie
+        $cookie_name = "user";
+
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $randomString = '';
+        for ($i = 0; $i < 20; $i++) {
+            $randomString .= $characters[rand(0, strlen($characters) - 1)];
+        }
+
+        $cookie_value = $usname . $randomString;
+        setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+
+        $_SESSION['cookie'] = $cookie_value;
+
         // Now direct to users feed
         header("Location: ../index.php");
     } else {
