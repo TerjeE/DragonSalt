@@ -1,11 +1,11 @@
 body {
     align-content: center;
    //border-radius: 10px;
-    background: -webkit-linear-gradient(to right,#aa6633,#552211, #aa6633); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(to right,#aa6633,#552211, #aa6633); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(to right,#aa6633,#552211, #aa6633); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right,#aa6633,#552211, #aa6633); /* Standard syntax (must be last) */
-    background: linear-gradient(to right,#aa6633,#552211, #aa6633);
+    background: -webkit-linear-gradient(to right,#552211,#aa6633, #552211); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(to right,#552211,#aa6633, #552211); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(to right,#552211,#aa6633, #552211); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right,#552211,#aa6633, #552211); /* Standard syntax (must be last) */
+    background: linear-gradient(to right,#552211,#aa6633, #552211);
 }
 
 button {
