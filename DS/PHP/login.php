@@ -64,7 +64,7 @@ if (isset($_POST['username'])) {
 <div id="wrapper">
     <h1>Simple PHP Login</h1>
     <form id="form" action="login.php" method="post" enctype="multipart/form-data">
-        <label for="username">Username:</label> <input id="username" type="text" name="username" value="" /> <br />
+        <label for="username">Username:</label> <input id="username" type="text" name="username" value="<?php if(isset($_POST['username'])){echo $_POST['username'];} ?>" /> <br />
         <label for="password">Password:</label> <input id="password" type="password" name="password" /> <br />
         <input type="submit" value="Login" name="Submit" />
     </form>

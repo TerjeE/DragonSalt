@@ -20,6 +20,7 @@
 
         include_once 'PHP/produkt.php';
         include_once 'PHP/handlekurv.php';
+        include_once 'PHP/adminpanel.php';
 
     ?>
 
