@@ -1,3 +1,11 @@
+
+<?php
+session_start();
+$error = 0;
+if(isset($_SESSION['id']) & isset($_SESSION['username'])){
+    if($_COOKIE['user'] == $_SESSION['cookie']) {
+        include_once("config.php");
+        ?>
 <html>
     <head>
 <!--        <meta charset="UTF-8">-->
@@ -16,16 +24,7 @@
              </ul>
             
             </div>
-<?php
-session_start();
-$error = 0;
-if(isset($_SESSION['id']) & isset($_SESSION['username'])){
-    if($_COOKIE['user'] == $_SESSION['cookie']) {
-        include_once("config.php");
-        ?>
-        <div>
-            Hello mr admin!
-        </div>
+        <h1>Produkt</h1>
          <?php
         include_once("spTest.php");
         ?>
