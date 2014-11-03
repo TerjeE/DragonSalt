@@ -8,7 +8,9 @@ if(isset($_SESSION['id']) & isset($_SESSION['username'])){
         <div>
             Hello mr admin!
         </div>
-
+         <?php
+        include_once("spTest.php");
+        ?>
         <div>
             <form name="input" action="admin_leggtil.php" method="post">
                 <table>
@@ -59,12 +61,9 @@ if(isset($_SESSION['id']) & isset($_SESSION['username'])){
                             <input id="pris" type="text" name="pris" value="">
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <input type="submit" value="Legg Til">
-                        </td>
-                    </tr>
+                    
                 </table>
+                <input type="submit" value="Legg Til">
             </form>
         </div>
     <?php
