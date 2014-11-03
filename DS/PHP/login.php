@@ -39,7 +39,7 @@ if (isset($_POST['username'])) {
         $_SESSION['cookie'] = $cookie_value;
 
         // Now direct to users feed
-        header("Location: ../index.php");
+        header("Location: admin.php");
     } else {
         echo "<h2>Oops that username or password combination was incorrect.
 		<br /> Please try again.</h2>";
