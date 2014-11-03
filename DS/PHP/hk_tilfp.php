@@ -6,6 +6,7 @@ session_start();
 $current_url = base64_encode("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
 
     if (isset($_SESSION["produkt"])) {
+        $ordrenavn = "error";
         foreach ($_SESSION["produkt"] as $produkt) {
             //Legg til produkt i ferdigprodukt
             $pid = $produkt->pid;
@@ -45,11 +46,11 @@ $current_url = base64_encode("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUE
 
             if (is_array($produkt->tilbehor)) {
                 //Legg til tilbehor i fp_tilbehor
-                echo "<ul>";
+                /*echo "<ul>";*/
                 foreach ($produkt->tilbehor as $tilbehor_id) {
-                    echo "<li>";
+                    /*echo "<li>";
                     //echo $tilbehor_id;
-                    echo "</li>";
+                    echo "</li>";*/
 
 
 
@@ -60,17 +61,22 @@ $current_url = base64_encode("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUE
                     }
                     //echo "<br>Added " . $fp_id . " and " . $tilbehor_id . " to fp_tilbehor. <br>";
                 }
-                echo "</ul>";
+                /*echo "</ul>";*/
             } else {
-                echo "<ul>";
+                /*echo "<ul>";
                 echo "<li>";
                 echo htmlentities("Uten tilbehør");
                 echo "</li>";
-                echo "</ul>";
+                echo "</ul>";*/
             }
 
         }
         include_once("hk_tilordre.php");
+
+        include_once("hk_empty.php");
+
+        header('Location: hk_ordre.php?ordre_navn=' . $navn);
+        //echo '<span class="empty-cart"><a href="PHP/hk_tilfp.php?return_url=' . $current_url . '">Test</a></span>';
     } else {
         echo "Empty cart";
     }
