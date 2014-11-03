@@ -43,14 +43,7 @@ h4 {
     overflow: auto;
     font-size: 0.8em;
 
-/
-/
-border:
-
-1
-px solid #000
-
-;
+border:1px solid #000;
 
 }
 
@@ -113,7 +106,7 @@ px solid #000
 }
 
 #nav ul li {
-/ / display : inline;
+display : inline;
     display: table-cell;
     width: 20px;
 }
