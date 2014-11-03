@@ -11,6 +11,7 @@ if (isset($_SESSION["ferdigprodukt"])) {
     }
 
     $navn = $randomString;
+    $ordrenavn = $navn;
     $dato = date("Y/m/d");
     $sql = 'INSERT INTO `ordre`(`ordre_navn`, `dato`) VALUES ("'.$navn.'", "'.$dato.'")';
 
