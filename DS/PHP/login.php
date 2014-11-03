@@ -50,8 +50,9 @@ if (isset($_POST['username'])) {
 <!DOCTYPE html>
 <html>
 <head>
+    
     <meta charset="UTF-8">
-    <title>Basic login system</title>
+    <title>Barista DBMS</title>
     <style type="text/css">
         html {
             font-family: Verdana, Geneva, sans-serif;
@@ -76,7 +77,7 @@ if (isset($_POST['username'])) {
 
 <body>
 <div id="wrapper">
-    <h1>Simple PHP Login</h1>
+    <h1>Barista DBMS Login</h1>
     <form id="form" action="login.php" method="post" enctype="multipart/form-data">
         <label for="username">Username:</label> <input id="username" type="text" name="username" value="<?php if(isset($_POST['username'])){echo $_POST['username'];} ?>" /> <br />
         <label for="password">Password:</label> <input id="password" type="password" name="password" /> <br />
