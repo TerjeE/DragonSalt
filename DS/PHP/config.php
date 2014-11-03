@@ -1,4 +1,14 @@
 <?php
+
+function freeAllResults($mysqli){
+    while ($mysqli->next_result()) {
+        $result = $mysqli->use_result();
+        if ($result instanceof mysqli_result) {
+            $result->free();
+        }
+    }
+}
+
 $currency = 'NOK';
 $db_username = 'moderator';
 $db_password = 'ftyujnbv';

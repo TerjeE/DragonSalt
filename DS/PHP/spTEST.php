@@ -9,6 +9,7 @@ if(isset($_SESSION['id']) & isset($_SESSION['username'])){
   
   
 $rs = $mysqli->query( 'CALL sp_SelAllProdukt' );
+freeAllResults($mysqli);
 ?>
 <form name="input" action="admin_fjern.php" method="post">
 <table>

@@ -16,6 +16,7 @@
         echo "<caption class='produktKat'> " . $kat['Kat_navn'] . "</caption>";
         echo "</div>";
     }
+
     //Går gjennom kategoriene
     //$kategori = mysqli_query($con, "SELECT * FROM kategori");
     mysqli_data_seek($kategori, 0);
@@ -33,18 +34,23 @@
         }
 
 
-        $prod_i_kat = mysqli_query($con, "SELECT * FROM produkt WHERE kat_id=" . $kat['kat_id'] . "");
+        //$prod_i_kat = mysqli_query($con, "SELECT * FROM produkt WHERE kat_id=" . $kat['kat_id'] . "");
+        $prod_i_kat = mysqli_query($con, "CALL produktFraKatID(". $kat['kat_id'] .")");
+
+        //frigjør det andre svaret fra prosedyren( prosedyrer returnerer svaret og prosedyrestatusen.
+        freeAllResults($con);
+
         while ($prod = mysqli_fetch_array($prod_i_kat)) {
             //Printer ut produktene i valgt kategori
             //echo '<form method="post" action="PHP\hk_leggTil.php">';
 
-            $dick = $prod['produkt_navn'];
+            $produktNavn = $prod['produkt_navn'];
 
 
             //Knapp
             echo "<div class=\"et_produkt\">";
             echo "<p class=\"produktnavn\">";
-            echo $dick;
+            echo $produktNavn;
             echo "</p>";
 
             $img = $prod['bilde'];
@@ -58,7 +64,7 @@
 
             echo $prod['pris'];
             echo " kr";
-            echo "<button onclick=\"openBox('$dick')\">";
+            echo "<button onclick=\"openBox('$produktNavn')\">";
             echo htmlentities("Med Tilbehør");
             echo "</button>";
 
@@ -79,7 +85,7 @@
             echo "</div>";
 
             //popup
-            echo "<div class='popup' id='$dick' onclick='popupClicked()'>";
+            echo "<div class='popup' id='$produktNavn' onclick='popupClicked()'>";
 
 
             echo $prod['produkt_navn'];
