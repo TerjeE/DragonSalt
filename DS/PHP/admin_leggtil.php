@@ -9,7 +9,7 @@ if(isset($_SESSION['id']) & isset($_SESSION['username'])){
             Hello mr admin!
         </div>
         <?php
-        if($_POST['produkt_navn']){
+        if(isset($_POST['produkt_navn'])){
             $produkt_navn = $_POST['produkt_navn'];
             $kat_id = $_POST['kat_id'];
             $pris = $_POST['pris'];
@@ -21,8 +21,11 @@ if(isset($_SESSION['id']) & isset($_SESSION['username'])){
             echo $pris;
             echo $bilde;
             echo $beskrivelse;
-
-
+            $sql = 'INSERT INTO `produkt`(`produkt_navn`, `kat_id`, `pris`, `bilde`, `beskrivelse`) VALUES ("'.$produkt_navn.'",'.$kat_id.','.$pris.', "'.$bilde.'","'.$beskrivelse.'")';
+            //echo $sql;
+            mysqli_query($con, $sql);
+            
+            header("Location: admin.php");
         }
         ?>
     <?php

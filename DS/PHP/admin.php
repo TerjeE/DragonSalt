@@ -1,3 +1,21 @@
+<html>
+    <head>
+<!--        <meta charset="UTF-8">-->
+         <link rel="stylesheet" type="text/css" href="../admin.css">
+    </head>
+    <body>
+        <div  id="nav">
+              <ul>
+                  <li><a href="admin.php">Produkt</a></li> 
+              </ul>
+             <ul>
+                 <li><a href="admin_tilbehor.php">Tilbeh&oslash;r</a></li>
+             </ul>
+             <ul>
+                 <li><a href="admin_fp.php">Ferdig Produkt</a></li>
+             </ul>
+            
+            </div>
 <?php
 session_start();
 $error = 0;
@@ -17,19 +35,19 @@ if(isset($_SESSION['id']) & isset($_SESSION['username'])){
                     <caption>Legg til nytt produkt</caption>
                     <tr>
                         <td>
-                            <label id="produkt_navn">Produkt navn:</label>
+                            <label id="produkt_navn">Produkt navn</label>
                         </td>
                         <td>
-                            <label id="kat_id">Kategori:</label>
+                            <label id="kat_id">Kategori</label>
                         </td>
                         <td>
-                            <label id="bilde">Bilde:</label>
+                            <label id="bilde">Bilde</label>
                         </td>
                         <td>
-                            <label id="beskrivelse">Beskrivelse:</label>
+                            <label id="beskrivelse">Beskrivelse</label>
                         </td>
                         <td>
-                            <label id="pris">Pris:</label>
+                            <label id="pris">Pris</label>
                         </td>
                     </tr>
                     <tr>
@@ -81,3 +99,5 @@ if($error == 1){
     <?php
 }
 ?>
+</body>
+</html>
