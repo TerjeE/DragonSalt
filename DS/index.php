@@ -2,6 +2,7 @@
 <html onclick="htmlClicked()">
 
     <head>
+        <link rel="icon" href="pics/favicon.ico" type="image/x-icon"/>
     </head>
 
     <link rel="stylesheet" type="text/css" href="indexStyle.css">
