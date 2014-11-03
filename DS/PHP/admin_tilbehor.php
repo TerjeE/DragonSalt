@@ -1,3 +1,12 @@
+
+<?php
+session_start();
+$error = 0;
+if(isset($_SESSION['id']) & isset($_SESSION['username'])){
+    if($_COOKIE['user'] == $_SESSION['cookie']) {
+        include_once("config.php");
+        
+        ?>
 <html>
     <head>
 <!--        <meta charset="UTF-8">-->
@@ -16,13 +25,6 @@
              </ul>
             
             </div>
-<?php
-session_start();
-$error = 0;
-if(isset($_SESSION['id']) & isset($_SESSION['username'])){
-    if($_COOKIE['user'] == $_SESSION['cookie']) {
-        include_once("config.php");
-        ?>
         <h1>Tilbeh&oslash;r</h2>
          <?php
         include_once("spTilbehor.php");
@@ -80,7 +82,7 @@ if(isset($_SESSION['id']) & isset($_SESSION['username'])){
 if($error == 1){
     ?>
     <div>
-        Please log inn.
+        Please log in.
     </div>
     <?php
 }
