@@ -13,18 +13,9 @@ if(isset($_SESSION['id']) & isset($_SESSION['username'])){
          <link rel="stylesheet" type="text/css" href="../admin.css">
     </head>
     <body>
-        <div  id="nav">
-              <ul>
-                  <li><a href="admin.php">Produkt</a></li> 
-              </ul>
-             <ul>
-                 <li><a href="admin_tilbehor.php">Tilbeh&oslash;r</a></li>
-             </ul>
-             <ul>
-                 <li><a href="admin_fp.php">Ferdig Produkt</a></li>
-             </ul>
-            
-            </div>
+        <?php
+        include_once("nav.php");
+        ?>
         <h1>Tilbeh&oslash;r</h2>
          <?php
         include_once("spTilbehor.php");
