@@ -11,24 +11,34 @@ $current_url = base64_encode("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUE
             $pid = $produkt->pid;
             $navn = $produkt->navn;
 
-            echo "<b>";
+            /*echo "<b>";
             echo $navn . "<br>";
             echo $pid . "<br>";
-            echo "</b>";
+            echo "</b>";*/
 
             $sql = 'INSERT INTO `ferdigprodukt`(`fp_navn`, `produkt_id`) VALUES ("'.$navn.'", '.$pid.')';
-            echo "<br>";
+            /*echo "<br>";
             echo $sql;
-            echo "<br>";
+            echo "<br>";*/
             if (!mysqli_query($con, $sql)) {
                 die('Error: ' . mysqli_error($con));
             }
-            echo "<br>";
+            //echo "<br>";
             $fp_id = mysqli_insert_id($con);
-            echo " Added fp_id =  ";
+
+
+            if (!isset($_SESSION["ferdigprodukt"])) {
+                $_SESSION["ferdigprodukt"] = array();
+                array_push($_SESSION["ferdigprodukt"], $fp_id);
+            } else {
+                array_push($_SESSION["ferdigprodukt"], $fp_id);
+            }
+
+
+            /*echo " Added fp_id =  ";
             echo $fp_id;
             echo " produkt_id = ";
-            echo $pid;
+            echo $pid;*/
             echo "<br>";
 
 
@@ -38,17 +48,17 @@ $current_url = base64_encode("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUE
                 echo "<ul>";
                 foreach ($produkt->tilbehor as $tilbehor_id) {
                     echo "<li>";
-                    echo $tilbehor_id;
+                    //echo $tilbehor_id;
                     echo "</li>";
 
 
 
                     $sql = 'INSERT INTO `fp_tilbehor`(`fp_id`, `tilbehor_id`) VALUES ('.$fp_id.','.$tilbehor_id.')';
-                    echo $sql;
+                    //echo $sql;
                     if (!mysqli_query($con, $sql)) {
                         die('Error: ' . mysqli_error($con));
                     }
-                    echo "<br>Added " . $fp_id . " and " . $tilbehor_id . " to fp_tilbehor. <br>";
+                    //echo "<br>Added " . $fp_id . " and " . $tilbehor_id . " to fp_tilbehor. <br>";
                 }
                 echo "</ul>";
             } else {
@@ -58,7 +68,9 @@ $current_url = base64_encode("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUE
                 echo "</li>";
                 echo "</ul>";
             }
+
         }
+        include_once("hk_tilordre.php");
     } else {
         echo "Empty cart";
     }
