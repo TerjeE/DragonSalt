@@ -3,14 +3,16 @@ session_start();
 $error = 0;
 if(isset($_SESSION['id']) & isset($_SESSION['username'])){
     if($_COOKIE['user'] == $_SESSION['cookie']) {
+        include_once("config.php");
         ?>
         <div>
             Hello mr admin!
         </div>
 
         <div>
-            <form name="input" action="admin.php" method="post">
+            <form name="input" action="admin_leggtil.php" method="post">
                 <table>
+                    <caption>Legg til nytt produkt</caption>
                     <tr>
                         <td>
                             <label id="produkt_navn">Produkt navn:</label>
@@ -24,6 +26,9 @@ if(isset($_SESSION['id']) & isset($_SESSION['username'])){
                         <td>
                             <label id="beskrivelse">Beskrivelse:</label>
                         </td>
+                        <td>
+                            <label id="pris">Pris:</label>
+                        </td>
                     </tr>
                     <tr>
                         <td>
@@ -31,8 +36,17 @@ if(isset($_SESSION['id']) & isset($_SESSION['username'])){
                         </td>
                         <td>
                             <select name="kat_id">
-                                <option value="1">Kaffe</option>
-                                <option value="2">Te</option>
+
+                                <?php
+                                $kategori = mysqli_query($con, "SELECT * FROM kategori");
+                                while ($kat = mysqli_fetch_array($kategori)) {
+                                    ?>
+                                    <option value="<?php echo $kat['kat_id'] ?>"><?php echo $kat['Kat_navn'] ?></option>
+                                    <?php
+                                }
+
+
+                                ?>
                             </select>
                         </td>
                         <td>
@@ -41,10 +55,13 @@ if(isset($_SESSION['id']) & isset($_SESSION['username'])){
                         <td>
                             <input id="beskrivelse" type="text" name="beskrivelse" value="">
                         </td>
+                        <td>
+                            <input id="pris" type="text" name="pris" value="">
+                        </td>
                     </tr>
                     <tr>
                         <td>
-                            <input type="submit" value="Submit">
+                            <input type="submit" value="Legg Til">
                         </td>
                     </tr>
                 </table>
