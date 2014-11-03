@@ -17,7 +17,8 @@
         echo "</div>";
     }
     //Går gjennom kategoriene
-    $kategori = mysqli_query($con, "SELECT * FROM kategori");
+    //$kategori = mysqli_query($con, "SELECT * FROM kategori");
+    mysqli_data_seek($kategori, 0);
     $iterations = 1;
     while ($kat = mysqli_fetch_array($kategori)) {
         $kategorinavn = $kat['Kat_navn'];
