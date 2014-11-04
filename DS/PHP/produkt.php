@@ -132,7 +132,7 @@
             echo "</div>";
 
 
-            echo '<button class="add_to_cart">Legg til</button>';
+            echo '<button class="add_to_cart" onclick="scrollTest(this)">Legg til</button>';
             echo "</div>";
             echo "</form>";
 
