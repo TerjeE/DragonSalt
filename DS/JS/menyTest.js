@@ -51,7 +51,22 @@ function htmlClicked(){
     }
 
 }
+
+function scrollTest(element){
+    scrollpos= document.body.scrollTop;
+    localStorage.setItem("scrollpos", scrollpos);
+    //alert(scrollpos);
+}
+
+function scrolldown(){
+    var scrollpos = localStorage.getItem("scrollpos");
+    //alert("scrolldown" + scrollpos);
+    window.scrollTo(0, scrollpos);
+
+}
+
 function popupClicked(){
     clicked = 1;
 
 }
+
