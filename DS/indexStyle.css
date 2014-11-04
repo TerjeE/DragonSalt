@@ -6,6 +6,7 @@ body {
     background: -moz-linear-gradient(to right,#552211,#aa6633, #552211); /* For Firefox 3.6 to 15 */
     background: linear-gradient(to right,#552211,#aa6633, #552211); /* Standard syntax (must be last) */
     background: linear-gradient(to right,#552211,#aa6633, #552211);
+    font-family: "Trebuchet MS", Helvetica, sans-serif
 }
 
 button {
@@ -104,7 +105,7 @@ html{
     background: #eecc99;
 }
 .et_produkt {
-    background: #eecc99;
+    //background: #eecc99;
     margin: 1px;
     padding: 5px;
     //border: 1px solid;
@@ -112,6 +113,11 @@ html{
     min-width: 400px;
     min-height: 300px;
    //border-radius: 10px;
+
+    background: -webkit-linear-gradient(#cc9966, #eecc99); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#cc9966, #eecc99); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#cc9966, #eecc99); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#cc9966, #eecc99); /* Standard syntax (must be last) */
 }
 
 .et_produkt img{
@@ -138,10 +144,15 @@ html{
 }
 .buttons{
     position: absolute; right: 5px; bottom: 0;
-    font-size: 2em;
+    font-size: 1.5em;
+
+}
+.pris{
+    font-size: 1em;
+    display: inline-block;
 }
 .buttons button{
-    font-size: 0.50em;
+    font-size: 1em;
 }
 .buttons form{
     float:right;
@@ -150,7 +161,8 @@ html{
 
 
 .add_to_cart {
-    position: absolute; right: 0; bottom: 0;
+
+    position: absolute; right: 5px; bottom: 0;
    //border-radius: 10px;
 }
 
@@ -170,10 +182,15 @@ html{
     z-index: 99;
     background: #aa6633;
     margin: 1px;
-    padding: 5px 5px 20px;
+    padding: 5px 5px 35px;
     min-width: 400px;
    //border-radius: 10px;
 
+    background: -webkit-linear-gradient(to right,#6F371B,#aa6633, #6F371B); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(to right,#6F371B,#aa6633, #6F371B); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(to right,#6F371B,#aa6633, #6F371B); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right,#6F371B,#aa6633, #6F371B); /* Standard syntax (must be last) */
+    background: linear-gradient(to right,#6F371B,#aa6633, #6F371B);
 }
 
 .popup form button{
@@ -181,8 +198,13 @@ html{
 }
 .tilbehor {
 
-    background: #cc9966;
+    //background: #cc9966;
    //border-radius: 10px;
+    padding-bottom: 10px;
+    background: -webkit-linear-gradient(#cc9966, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#cc9966, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#cc9966, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#cc9966, white); /* Standard syntax (must be last) */
 }
 
 .tilbehorType {
@@ -207,6 +229,11 @@ html{
     right: 5px;
     top: 2px;
    //border-radius: 10px;
+}
+
+.tilbehor .tilbehorType:last-child .tilbehornavn:last-child{
+    //border: 0;
+
 }
 
 

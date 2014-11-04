@@ -61,9 +61,10 @@
 
 
             echo "<div class=\"buttons\">";
-
+            echo "<div class=\"pris\">";
             echo $prod['pris'];
             echo " kr";
+            echo "</div>";
             echo "<button onclick=\"openBox('$produktNavn')\">";
             echo htmlentities("Med Tilbehør");
             echo "</button>";
