@@ -1,4 +1,4 @@
-<div class="produkt">
+<div class="produkt" id="testid">
     <?php
 
     $current_url = base64_encode("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
@@ -74,7 +74,7 @@
             echo '<input type="hidden" name="produkt_navn" value="' . $prod['produkt_navn'] . '">';
             echo '<input type="hidden" name="return_url" value="' . $current_url . '">';
             echo '<input type="hidden" name="kat_id" value="' . $kat['kat_id'] . '">';
-            echo "<button>";
+            echo "<button onclick=\"scrollTest(this)\">";
             echo htmlentities("Kjøp");
             echo "</button>";
             echo "</form>";
@@ -132,7 +132,7 @@
             echo "</div>";
 
 
-            echo '<button class="add_to_cart">Legg til</button>';
+            echo '<button class="add_to_cart" onclick="scrollTest(this)">Legg til</button>';
             echo "</div>";
             echo "</form>";
 
