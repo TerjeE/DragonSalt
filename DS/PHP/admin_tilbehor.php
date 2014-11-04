@@ -19,6 +19,10 @@ if(isset($_SESSION['id']) & isset($_SESSION['username'])){
         <h1>Tilbeh&oslash;r</h2>
          <?php
         include_once("spTilbehor.php");
+         if (isset($_GET["error"]) && $_GET["error"] != "") {
+                echo $_GET["error"];
+         }
+
         ?>
         <div>
             <form name="input" action="admin_TilbLeggTil.php" method="post">

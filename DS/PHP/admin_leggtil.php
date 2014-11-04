@@ -23,9 +23,11 @@ if(isset($_SESSION['id']) & isset($_SESSION['username'])){
             echo $beskrivelse;
             $sql = 'INSERT INTO `produkt`(`produkt_navn`, `kat_id`, `pris`, `bilde`, `beskrivelse`) VALUES ("'.$produkt_navn.'",'.$kat_id.','.$pris.', "'.$bilde.'","'.$beskrivelse.'")';
             //echo $sql;
-            mysqli_query($con, $sql);
-            
-            header("Location: admin.php");
+            if(mysqli_query($con, $sql)){
+
+            }
+
+            header("Location: admin.php?error=" . mysqli_error($con));
         }
         ?>
     <?php

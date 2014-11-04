@@ -18,6 +18,9 @@ if(isset($_SESSION['id']) & isset($_SESSION['username'])){
         <h1>Produkt</h1>
          <?php
         include_once("spTest.php");
+         if (isset($_GET["error"]) && $_GET["error"] != "") {
+             echo $_GET["error"];
+         }
         ?>
         <div>
             <form name="input" action="admin_leggtil.php" method="post">

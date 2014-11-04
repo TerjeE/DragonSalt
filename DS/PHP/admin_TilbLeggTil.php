@@ -18,9 +18,12 @@ if(isset($_SESSION['id']) & isset($_SESSION['username'])){
 
             $sql = 'INSERT INTO `tilbehor`(`tilbehor_navn`, `type_id`, `pris`) VALUES ("'.$tilbehor_navn.'",'.$type_id.','.$pris.')';
             //echo $sql;
-            mysqli_query($con, $sql);
+            if(mysqli_query($con, $sql)){
+
+            }
+            header("Location: admin_tilbehor.php?error=" . mysqli_error($con));
             
-            header("Location: admin_tilbehor.php");
+
         }
         ?>
     <?php
