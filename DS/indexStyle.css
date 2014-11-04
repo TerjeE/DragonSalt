@@ -206,7 +206,9 @@ html{
     background: -moz-linear-gradient(#cc9966, white); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#cc9966, white); /* Standard syntax (must be last) */
 }
-
+a{
+    text-decoration: none;
+}
 .tilbehorType {
     font-size: 0.7em;
 
