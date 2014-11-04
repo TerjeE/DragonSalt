@@ -191,7 +191,7 @@ CREATE PROCEDURE fpFraOrdreNavn(
         ON ferdigprodukt.produkt_id = produkt.produkt_id
     WHERE ordre.ordre_id = ordreId
 
-    GROUP BY fp_id;
+    GROUP BY ferdigprodukt.fp_id;
   END;
 
 # Hent ut tilbehør ut i fra ferdigprodukt ID
