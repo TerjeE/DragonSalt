@@ -6,6 +6,7 @@ session_start();
 $current_url = base64_encode("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
 
     if (isset($_SESSION["produkt"])) {
+        unset($_SESSION["ferdigprodukt"]);
         $ordrenavn = "error";
         foreach ($_SESSION["produkt"] as $produkt) {
             //Legg til produkt i ferdigprodukt
