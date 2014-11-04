@@ -88,6 +88,19 @@ CREATE UNIQUE INDEX produkt_id ON produkt ( produkt_id );
 ALTER TABLE tilbehor ADD FOREIGN KEY ( type_id ) REFERENCES type ( type_id );
 CREATE UNIQUE INDEX tilbehør_id ON tilbehor ( tilbehor_id );
 
+INSERT INTO `admins` (`id`, `username`, `password`, `firstname`, `lastname`, `activated`) VALUES
+  (1, 'admin', '$2y$12$N0pI1kGWHz5jXzQuAiTqDeb/a4BEzPnwmhqK0ZlrNzqNYC.V6Zxwa', 'Jan', 'Egeland', '1');
+
+INSERT INTO `ferdigprodukt` (`fp_id`, `fp_navn`, `produkt_id`) VALUES
+  (1, 'Regular Coffe', 1);
+
+INSERT INTO `fp_tilbehor` (`fp_id`, `tilbehor_id`) VALUES
+  (1, 1),
+  (1, 2);
+
+INSERT INTO `kategori` (`kat_id`, `Kat_navn`) VALUES
+  (1, 'Kaffe'),
+  (2, 'Te');
 
 INSERT INTO `produkt` (`produkt_id`, `produkt_navn`, `kat_id`, `pris`, `bilde`, `beskrivelse`) VALUES
   (1, 'Regular Coffe', 1, '20.00', 'pics/regular.jpg', 'Vanelig svart kaffi med dyp aroma'),
