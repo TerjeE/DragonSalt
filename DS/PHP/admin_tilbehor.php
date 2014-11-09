@@ -27,7 +27,7 @@ if(isset($_SESSION['id']) & isset($_SESSION['username'])){
         <div>
             <form name="input" action="admin_TilbLeggTil.php" method="post">
                 <table>
-                    <caption>Legg til nytt produkt</caption>
+                    <caption>Legg til et nytt tilbeh&oslash;r</caption>
                     <tr>
                         <td>
                             <label id="tilbehor_navn">Tilbeh&oslash;r navn</label>

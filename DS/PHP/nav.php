@@ -11,6 +11,9 @@
                  <li><a href="admin_fp.php">Ferdig Produkt</a></li>
              </ul>
             <ul>
+                <li><a href="admin_registrer.php">Admin</a></li>
+            </ul>
+            <ul>
                 <li><a href="logout.php">Log out</a><li>
             </ul>
             
