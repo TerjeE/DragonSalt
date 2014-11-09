@@ -15,7 +15,7 @@ if(isset($_SESSION['id']) & isset($_SESSION['username'])){
         <?php
         include_once("nav.php");
         ?>
-        <h1>Admin</h2>
+        <h1>Admin</h1>
         <?php
         include_once("spAdmins.php");
         if (isset($_GET["error"]) && $_GET["error"] != "") {
