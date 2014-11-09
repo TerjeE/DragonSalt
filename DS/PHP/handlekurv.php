@@ -1,5 +1,5 @@
 <div class="hk_frame">
-
+    <div id="title">Handlekurv</div>
     <?php
     $current_url = base64_encode("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
     if (isset($_SESSION["produkt"]) && !empty($_SESSION["produkt"])) {
@@ -38,11 +38,14 @@
             echo " kr";
             $totalpris += $produkt->pris;
             echo "</div>";
-            echo '<span class="fjern-produkt"><a href="PHP/hk_fjern.php?return_url=' . $current_url . '&Hk_index='.$index.'">X</a></span>';
+            echo '<button class="fjern-produkt"><a href="PHP/hk_fjern.php?return_url=' . $current_url . '&Hk_index='.$index.'">X</a></button>';
             $index++;
             echo "</div>";
         }
+
         echo "</div>";
+
+        echo "<div class='hk_checkout'>";
         echo "<div class=\"totalpris\">";
         echo "Totalpris: ";
         echo $totalpris;
@@ -51,12 +54,14 @@
 
         //Knapper
         echo "<br>";
-        echo '<span class="empty-cart"><a href="PHP/hk_empty.php?emptycart=1&return_url=' . $current_url . '">Empty Cart</a></span>';
+        echo '<button class="empty-cart"><a href="PHP/hk_empty.php?emptycart=1&return_url=' . $current_url . '">Empty Cart</a></button>';
         echo "<br>";
-        echo '<span class="empty-cart"><a href="PHP/hk_tilfp.php?return_url=' . $current_url . '">Test</a></span>';
+        echo '<button class="checkBtn"><a href="PHP/hk_tilfp.php?return_url=' . $current_url . '">Test</a></button>';
+        echo "</div>";
     } else {
         echo "Empty cart";
     }
+
 
     ?>
 

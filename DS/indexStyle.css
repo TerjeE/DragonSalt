@@ -23,29 +23,50 @@ html{
 }
 
 .hk_frame {
+    margin: 0px 0px 0px 0px;
     color: black;
-    padding: 10px;
-    background-color: lightskyblue;
+    /*padding: 10px;*/
+    /*background-color: #6F371B;*/
+    background-color: #AA6633;
     position: absolute;
     top: 0;
     right: 0;
    //border-radius: 10px;
 }
 
+#title {
+    font-size: 150%;
+    background: -webkit-linear-gradient(to top,#552211 1%,#aa6633 100%); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(to top,#552211 1%,#aa6633 100%); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(to top,#552211 1%,#aa6633 100%); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to top,#552211 1%,#aa6633 100%); /* Standard syntax (must be last) */
+    border-bottom: 1px solid #000000;
+    text-align: center;
+    padding-top: 10px;
+    border-radius: 4px 4px 0 0;
+    display: block;
+    min-height: 50px;
+}
+
 .hk_produktliste {
     color: black;
-    padding: 10px;
-    background-color: cornflowerblue;
+    /*padding: 10px;*/
+    /*background-color: #cc9966;*/
    //border-radius: 10px;
 }
 
 .hk_produkt {
     position: relative;
     color: black;
-    margin-top: 10px;
+    /*margin-top: 10px;*/
     padding: 20px 10px 10px;
-    background-color: lightcyan;
+    background: -webkit-linear-gradient(to top, #ba865d 1%,#cc9966 30%); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(to top,#ba865d 1%,#cc9966 30%); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(to top,#ba865d 1%,#cc9966 30%); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to top, #ba865d 1%,#cc9966 30%); /* Standard syntax (must be last) */
    //border-radius: 10px;
+    margin-bottom: 1px;
+
 }
 
 .hk_produkt ul {
@@ -64,6 +85,33 @@ html{
     right: 5px;
     bottom: 2px;
    //border-radius: 10px;
+}
+
+.hk_checkout {
+    background-color: #aa937c;
+    min-width: 250px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.empty-cart{
+    position: absolute;
+    right: 5px;
+    top: 30px;
+}
+
+.checkBtn{
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+.totalpris {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-weight: bold;
+    text-align: right;
 }
 
 .fjern-produkt{
@@ -87,8 +135,8 @@ html{
 }
 .kategori {
 
-    //border: 2px solid #49240e;
-   //border-radius: 10px;
+    /*//border: 2px solid #49240e;*/
+    /*//border-radius: 10px;*/
 }
 .kategoriknapp {
     background: #ffeecc;
