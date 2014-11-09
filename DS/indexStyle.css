@@ -28,7 +28,6 @@ html{
 }
 
 .hk_frame {
-    margin: 0px 0px 0px 0px;
     color: black;
     /*padding: 10px;*/
     /*background-color: #6F371B;*/
@@ -39,6 +38,7 @@ html{
     min-width: 250px;
     /*border-radius: 10px;*/
     border-radius: 0 0 10px 10px;
+    width: 250px;
 }
 
 #title {
@@ -174,7 +174,7 @@ html{
     /*border: 2px solid black;*/
     padding: 5px;
     max-width: 700px;
-    min-width: 700px;
+    min-width: 500px;
     /*float:left;*/
     margin-left: auto;
     margin-right: auto;
@@ -350,7 +350,7 @@ a{
         margin-right: 0;
     }
     .hk_frame{
-        width: 210px;
+        width: 250px;
     }
 
 }

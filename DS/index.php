@@ -16,7 +16,7 @@
 
     ?>
 
-
+    <div id="wrapper">
     <?php
 
         include_once 'PHP/produkt.php';
@@ -24,6 +24,7 @@
         //include_once 'PHP/adminpanel.php';
 
     ?>
+    </div>
 
     </body>
 
