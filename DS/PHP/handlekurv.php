@@ -38,7 +38,7 @@
             echo " kr";
             $totalpris += $produkt->pris;
             echo "</div>";
-            echo '<button class="fjern-produkt"><a onclick="scrollTest(this)" href="PHP/hk_fjern.php?return_url=' . $current_url . '&Hk_index='.$index.'">X</a></button>';
+            echo '<button class="fjern-produkt"><a href="PHP/hk_fjern.php?return_url=' . $current_url . '&Hk_index='.$index.'">X</a></button>';
             $index++;
             echo "</div>";
         }
@@ -52,12 +52,13 @@
         echo " kr";
         echo "</div>";
 
+
+
         //Knapper
         echo "<br>";
-        echo '<button class="empty-cart"><a  onclick="scrollTest(this)" href="PHP/hk_empty.php?emptycart=1&return_url=' . $current_url . '">Empty Cart</a></button>';
-
+        echo '<div class="empty-cart"><a href="PHP/hk_empty.php?emptycart=1&return_url=' . $current_url . '">Empty Cart</a></div>';
         echo "<br>";
-        echo '<button class="checkBtn"><a  onclick="scrollTest(this)" href="PHP/hk_tilfp.php?return_url=' . $current_url . '">Test</a></button>';
+        echo '<div class="checkBtn"><a href="PHP/hk_tilfp.php?return_url=' . $current_url . '">Checkout</a></div>';
         echo "</div>";
     } else {
         echo "Empty cart";
