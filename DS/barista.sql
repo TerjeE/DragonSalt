@@ -244,3 +244,8 @@ FOR EACH ROW
     END IF;
   END;//
 delimiter ;
+
+CREATE PROCEDURE sp_admin()
+  BEGIN
+    SELECT * FROM admins;
+  END;
