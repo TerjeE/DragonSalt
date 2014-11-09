@@ -147,6 +147,11 @@ html{
    //border-radius: 10px;
     font-size: 2em;
     display: inline-block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
+    cursor: hand;
 }
 .kategoriknapp:hover{
     background: #eecc99;
@@ -200,6 +205,8 @@ html{
 }
 .buttons button{
     font-size: 1em;
+    cursor: pointer;
+    cursor: hand;
 }
 .buttons form{
     float:right;
@@ -211,6 +218,8 @@ html{
 
     position: absolute; right: 5px; bottom: 0;
    //border-radius: 10px;
+    cursor: pointer;
+    cursor: hand;
 }
 
 .produktpris{
