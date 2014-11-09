@@ -61,7 +61,7 @@
         echo '<div class="checkBtn"><a href="PHP/hk_tilfp.php?return_url=' . $current_url . '">Checkout</a></div>';
         echo "</div>";
     } else {
-        echo "Empty cart";
+        echo "<div class='hk_produkt'>Empty cart</div>";
     }
 
 
