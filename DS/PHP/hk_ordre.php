@@ -58,7 +58,7 @@ if (isset($_GET["ordre_navn"])) {
         <?php
             }
         }
-        $totalpris += $fppris;
+        $totalpris += $fppris + 0;
 
 ?>
         <div class="fp_pris">Delsum: <?php echo $fppris;?>.-</div>
