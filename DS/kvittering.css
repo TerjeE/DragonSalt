@@ -1,0 +1,33 @@
+.kvittering {
+    background-color: beige;
+    max-width:400px;
+    position:relative;
+    padding-bottom:30px;
+    padding-right:30px;
+}
+
+.kvittering_produktliste{
+    margin-left: 50px;
+    padding: 10px 10px 10px 10px;
+    position:relative;
+    /*background-color: yellow;*/
+}
+
+.kvittering_produkt{
+    background-color: lightyellow;
+    margin-top: 10px;
+    padding-bottom: 15px;
+    position:relative;
+}
+
+.kvittering_pris{
+    position: absolute;
+    bottom:0;
+    right:0;
+}
+
+.totalpris {
+    font-size:150%;
+    position:absolute;
+    right:30px;
+}
