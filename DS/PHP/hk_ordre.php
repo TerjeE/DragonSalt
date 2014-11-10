@@ -43,6 +43,7 @@ if (isset($_GET["ordre_navn"])) {
                 <div class="kvittering_tpris">
                 <?php echo $row2['tilbehor_pris'];?>
                 </div>
+            </div>
 <?php
         }
 ?>
