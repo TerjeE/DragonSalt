@@ -73,8 +73,9 @@ $current_url = base64_encode("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUE
 
         }
         include_once("hk_tilordre.php");
-
         include_once("hk_empty.php");
+
+
 
         header('Location: hk_ordre.php?ordre_navn=' . $navn);
         //echo '<span class="empty-cart"><a href="PHP/hk_tilfp.php?return_url=' . $current_url . '">Test</a></span>';

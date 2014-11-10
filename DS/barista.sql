@@ -194,7 +194,6 @@ CREATE PROCEDURE fpFraOrdreNavn(
     GROUP BY ferdigprodukt.fp_id;
   END;
 
-
 # Hent ut tilbehør ut i fra ferdigprodukt ID
 DROP PROCEDURE IF EXISTS tilbehorFraFp;
 CREATE PROCEDURE tilbehorFraFp(
