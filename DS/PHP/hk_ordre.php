@@ -32,12 +32,8 @@ if (isset($_GET["ordre_navn"])) {
         freeAllResults($con);
 ?>
     <div class="kvittering_produkt">
-        <div class="fp_navn">
-        <?php echo $row['fp_navn'];?>
-        </div>
-        <div class="produkt_pris">
-        <?php echo $row['produkt_pris'];?>.-
-        </div>
+        <div class="fp_navn"><?php echo $row['fp_navn'];?></div>
+        <div class="produkt_pris"><?php echo $row['produkt_pris'];?>.-</div>
         <?php
         $fppris = $row['produkt_pris'];
         while($row2 = $tilb -> fetch_array()) {
@@ -46,12 +42,8 @@ if (isset($_GET["ordre_navn"])) {
 
             ?>
             <div class="tilbehor">
-                <div class="tilbehornavn">
-                    <?php echo $row2['tilbehor_navn']; ?>
-                </div>
-                <div class="kvittering_tpris">
-                    <?php echo $row2['tilbehor_pris']; ?>.-
-                </div>
+                <div class="tilbehornavn"><?php echo $row2['tilbehor_navn']; ?></div>
+                <div class="kvittering_tpris"><?php echo $row2['tilbehor_pris']; ?>.-</div>
             </div>
 
             <?php
@@ -61,16 +53,12 @@ if (isset($_GET["ordre_navn"])) {
         $totalpris += $fppris;
 
 ?>
-        <div class="fp_pris">
-            Delsum: <?php echo $fppris;?>.-
-        </div>
+        <div class="fp_pris">Delsum: <?php echo $fppris;?>.-</div>
         </div>
 <?php
     }
     ?>
-    <div class="total_pris">
-        Totalpris: <?php echo $totalpris; ?>.-
-    </div>
+    <div class="total_pris">Totalpris: <?php echo $totalpris; ?>.-</div>
 
     <?php
     freeAllResults($con);
