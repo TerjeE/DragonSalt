@@ -249,3 +249,4 @@ CREATE PROCEDURE sp_admin()
   BEGIN
     SELECT * FROM admins;
   END;
+

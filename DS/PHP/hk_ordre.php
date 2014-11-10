@@ -9,70 +9,49 @@ if (session_status() == PHP_SESSION_NONE) {
 if (isset($_GET["ordre_navn"])) {
     //session_destroy();
     ?>
+<div class="kvittering_produktliste">
     Din ordre:
 
 <?php
 
     echo $_GET["ordre_navn"];
+    $sql = 'CALL fpFraOrdreNavn ("'.$_GET["ordre_navn"].'")';
+    //echo $sql;
 
-}
+    $fp = mysqli_query($con,$sql);
+    freeAllResults($con);
+    while($row = mysqli_fetch_assoc($fp)){
+
+
+        $sql = 'CALL `tilbehorFraFp`('.$row['fp_id'].')';
+        //echo $sql;
+        $tilb = mysqli_query($con,$sql);
+        freeAllResults($con);
 ?>
-<div class="kvittering">
-    <div id="title">Kvittering</div>
-    <?php
+    <div class="kvittering_produkt">
+        <?php
+        echo $row['fp_navn'];
 
-    $current_url = base64_encode("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
-    if (isset($_SESSION["produkt"]) && !empty($_SESSION["produkt"])) {
-        echo "<div class='kvittering_produktliste'>";
-
-        $index = 0;
-        $totalpris = 0;
-        foreach ($_SESSION["produkt"] as $produkt) {
-            echo "<div class='kvittering_produkt'>";
-            echo "<b>";
-            echo $produkt->navn . "<br>";
-            echo "</b>";
-
-            if (is_array($produkt->tilbehor)) {
-                echo "<ul>";
-                //echo htmlentities(" Tilbehør: ");
-                foreach ($produkt->tilbehor as $tilbehor_id) {
-                    echo "<li>";
-                    //echo $tilbehor_id;
-
-                    $tilbehor_navn = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM tilbehor WHERE tilbehor_id ='$tilbehor_id'"))['tilbehor_navn'];
-                    echo $tilbehor_navn;
-
-                    echo "</li>";
-                }
-                echo "</ul>";
-            } else {
-                echo "<ul>";
-                echo "<li>";
-                echo htmlentities("Uten tilbehør");
-                echo "</li>";
-                echo "</ul>";
-            }
-            echo "<div class=\"kvittering_pris\">";
-            echo $produkt->pris;
-            echo " kr";
-            $totalpris += $produkt->pris;
-            echo "</div>";
-            $index++;
-            echo "</div>";
+        while($row2 = $tilb -> fetch_array()){
+            //print_r($row2);
+            ?>
+            <div class="tilbehor">
+                <div class="tilbehornavn">
+                <?php echo $row2['tilbehor_navn'];?>
+                </div>
+                <div class="kvittering_tpris">
+                <?php echo $row2['tilbehor_pris'];?>
+                </div>
+<?php
         }
-
-        echo "</div>";
-
-        echo "<div class=\"totalpris\">";
-        echo "Totalpris: ";
-        echo $totalpris;
-        echo " kr";
+?>
+        </div>
+<?php
     }
+    freeAllResults($con);
+}
 
-
-
-
-    ?>
+?>
+</div>
 
 </div>
