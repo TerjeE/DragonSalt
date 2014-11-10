@@ -9,6 +9,7 @@ if (session_status() == PHP_SESSION_NONE) {
 if (isset($_GET["ordre_navn"])) {
     //session_destroy();
     ?>
+<link rel="stylesheet" type="text/css" href="kvittering.css">
 <div class="kvittering_produktliste">
     Din ordre:
 
