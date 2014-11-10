@@ -328,6 +328,10 @@ a{
     position: relative;
     /*border-radius: 10px;*/
 }
+.tilbehornavn input{
+    width: 18px;
+    height: 18px;
+}
 
 .tilbehorpris{
     position: absolute;
