@@ -21,6 +21,7 @@ if (isset($_GET["ordre_navn"])) {
     //echo $sql;
 
     $fp = mysqli_query($con,$sql);
+    $totalpris = 0;
     freeAllResults($con);
     while($row = mysqli_fetch_assoc($fp)){
 
@@ -38,7 +39,7 @@ if (isset($_GET["ordre_navn"])) {
         <?php echo $row['produkt_pris'];?>
         </div>
         <?php
-        $produktpris = $row['produkt_pris'];
+        $fppris = $row['produkt_pris'];
         while($row2 = $tilb -> fetch_array()) {
             //print_r($row2);
             if (isset ($row2['tilbehor_navn'])) {
@@ -54,12 +55,24 @@ if (isset($_GET["ordre_navn"])) {
             </div>
 
             <?php
+                $fppris += $row2['tilbehor_pris'];
             }
         }
+        $totalpris += $fppris;
+
 ?>
+        <div class="fp_pris">
+            <?php echo $fppris;?>
+        </div>
         </div>
 <?php
     }
+    ?>
+    <div class="total_pris">
+    <?php echo $totalpris; ?>
+    </div>
+
+    <?php
     freeAllResults($con);
 }
 
