@@ -10,6 +10,7 @@ if (isset($_GET["ordre_navn"])) {
     //session_destroy();
     ?>
 <link rel="stylesheet" type="text/css" href="../kvittering.css">
+<div class="kvittering">
 <div class="kvittering_produktliste">
     Din ordre:
 
@@ -30,21 +31,30 @@ if (isset($_GET["ordre_navn"])) {
         freeAllResults($con);
 ?>
     <div class="kvittering_produkt">
+        <div class="fp_navn">
+        <?php echo $row['fp_navn'];?>
+        </div>
+        <div class="produkt_pris">
+        <?php echo $row['produkt_pris'];?>
+        </div>
         <?php
-        echo $row['fp_navn'];
-
-        while($row2 = $tilb -> fetch_array()){
+        $produktpris = $row['produkt_pris'];
+        while($row2 = $tilb -> fetch_array()) {
             //print_r($row2);
+            if (isset ($row2['tilbehor_navn'])) {
+
             ?>
             <div class="tilbehor">
                 <div class="tilbehornavn">
-                <?php echo $row2['tilbehor_navn'];?>
+                    <?php echo $row2['tilbehor_navn']; ?>
                 </div>
                 <div class="kvittering_tpris">
-                <?php echo $row2['tilbehor_pris'];?>
+                    <?php echo $row2['tilbehor_pris']; ?>
                 </div>
             </div>
-<?php
+
+            <?php
+            }
         }
 ?>
         </div>
@@ -56,4 +66,5 @@ if (isset($_GET["ordre_navn"])) {
 ?>
 </div>
 
+</div>
 </div>
