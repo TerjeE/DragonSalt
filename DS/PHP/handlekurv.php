@@ -38,7 +38,7 @@
             echo " kr";
             $totalpris += $produkt->pris;
             echo "</div>";
-            echo '<button class="fjern-produkt"><a onclick="scrollTest(this)" href="PHP/hk_fjern.php?return_url=' . $current_url . '&Hk_index='.$index.'">X</a></button>';
+            echo '<div class="fjern-produkt"><a onclick="scrollTest(this)" href="PHP/hk_fjern.php?return_url=' . $current_url . '&Hk_index='.$index.'">X</a></div>';
             $index++;
             echo "</div>";
         }
