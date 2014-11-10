@@ -62,15 +62,14 @@ if (isset($_GET["ordre_navn"])) {
 
 ?>
         <div class="fp_pris">
-            <?php echo $fppris;?>.-
+            Delsum: <?php echo $fppris;?>.-
         </div>
         </div>
 <?php
     }
     ?>
     <div class="total_pris">
-        Totalpris:
-    <?php echo $totalpris; ?>.-
+        Totalpris: <?php echo $totalpris; ?>.-
     </div>
 
     <?php
