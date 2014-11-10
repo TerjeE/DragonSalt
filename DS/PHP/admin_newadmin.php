@@ -15,11 +15,13 @@ if(isset($_SESSION['id']) & isset($_SESSION['username'])){
             $rpassword = $_POST['rrpassword'];
 
             if($password != $rpassword){
-                header("Location: admin_tilbehor.php?error=passwords does not match");
+                header("Location: admin_registrer.php?error=passwords does not match");
+                exit();
+
             }
 
             $options = array('cost' => 12);
-            $hash = password_hash($rpassword, PASSWORD_BCRYPT, $options);
+            $hash = password_hash($password, PASSWORD_BCRYPT, $options);
             $sql = 'INSERT INTO `admins`(`username`, `firstname`, `lastname`, `password`, `activated`) VALUES ("'.$username.'","'.$firstname.'","'.$lastname.'","'.$hash.'","'. 1 .'")';
             echo $sql;
             //echo $sql;
