@@ -36,7 +36,7 @@ if (isset($_GET["ordre_navn"])) {
         <?php echo $row['fp_navn'];?>
         </div>
         <div class="produkt_pris">
-        <?php echo $row['produkt_pris'];?>
+        <?php echo $row['produkt_pris'];?>.-
         </div>
         <?php
         $fppris = $row['produkt_pris'];
@@ -50,7 +50,7 @@ if (isset($_GET["ordre_navn"])) {
                     <?php echo $row2['tilbehor_navn']; ?>
                 </div>
                 <div class="kvittering_tpris">
-                    <?php echo $row2['tilbehor_pris']; ?>
+                    <?php echo $row2['tilbehor_pris']; ?>.-
                 </div>
             </div>
 
@@ -62,14 +62,15 @@ if (isset($_GET["ordre_navn"])) {
 
 ?>
         <div class="fp_pris">
-            <?php echo $fppris;?>
+            <?php echo $fppris;?>.-
         </div>
         </div>
 <?php
     }
     ?>
     <div class="total_pris">
-    <?php echo $totalpris; ?>
+        Totalpris:
+    <?php echo $totalpris; ?>.-
     </div>
 
     <?php
