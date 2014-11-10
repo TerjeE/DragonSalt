@@ -54,6 +54,7 @@ if (isset($_GET["ordre_navn"])) {
                     <div class="tilbehornavn">
                         Uten tilbeh&oslash;r
                     </div>
+                </div>
 
         <?php
             }
