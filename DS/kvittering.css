@@ -1,33 +1,83 @@
+body{
+    font-size: 150%;
+    font-weight: bold;
+}
+
 .kvittering {
-    background-color: beige;
-    max-width:400px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #efebeb;
+    max-width:500px;
     position:relative;
     padding-bottom:30px;
-    padding-right:30px;
+    padding-right:25px;
 }
 
 .kvittering_produktliste{
-    margin-left: 50px;
     padding: 10px 10px 10px 10px;
     position:relative;
     /*background-color: yellow;*/
 }
 
 .kvittering_produkt{
-    background-color: lightyellow;
+    font-size: 80%;
+    margin-left: 25px;
+    background-color: #ffffff;
     margin-top: 10px;
-    padding-bottom: 15px;
+    min-height: 50px;
+    padding-bottom: 20px;
     position:relative;
+    font-weight: bold;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
 }
 
-.kvittering_pris{
+.tilbehor{
+    font-size: 80%;
+    font-weight: normal;
+    position: relative;
+    margin-left: 10px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.tilbehor:nth-child(even){
+    background-color: #efebeb;
+}
+
+/*.tilbehor:nth-child(odd){*/
+    /*background-color: #d1fbc2;*/
+/*}*/
+
+.kvittering_tpris{
+    position:absolute;
+    top:0;
+    right: 0;
+}
+
+.produkt_pris{
+    position: absolute;
+    top:0;
+    right:0;
+}
+
+.fp_navn{
+    background-color: #d7fb5e;
+}
+
+.fp_pris{
+    /*border-left: 5px solid #000000;*/
+    /*border-top: 5px solid #000000;*/
     position: absolute;
     bottom:0;
     right:0;
 }
 
-.totalpris {
-    font-size:150%;
+.total_pris {
+    font-size:100%;
     position:absolute;
-    right:30px;
+    top: 100%;
+    right:0;
 }
