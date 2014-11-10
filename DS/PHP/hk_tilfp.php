@@ -73,7 +73,8 @@ $current_url = base64_encode("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUE
 
         }
         include_once("hk_tilordre.php");
-        include_once("hk_empty.php");
+        $_SESSION["produkt"] = array();
+        $_SESSION["ferdigprodukt"] = array();
 
 
 
