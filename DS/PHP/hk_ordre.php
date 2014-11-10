@@ -48,6 +48,14 @@ if (isset($_GET["ordre_navn"])) {
 
             <?php
                 $fppris += $row2['tilbehor_pris'];
+            }else{
+                ?>
+                <div class="tilbehor">
+                    <div class="tilbehornavn">
+                        Uten tilbeh&oslash;r
+                    </div>
+
+        <?php
             }
         }
         $totalpris += $fppris;
