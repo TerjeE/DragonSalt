@@ -43,7 +43,7 @@ if (isset($_GET["ordre_navn"])) {
             ?>
             <div class="tilbehor">
                 <div class="tilbehornavn"><?php echo $row2['tilbehor_navn']; ?></div>
-                <div class="kvittering_tpris"><?php echo $row2['tilbehor_pris']; ?>.-</div>
+                <div class="kvittering_tpris"><?php echo number_format((float)$row2['tilbehor_pris'], 2, ',', ''); ?>.-</div>
             </div>
 
             <?php
@@ -61,12 +61,12 @@ if (isset($_GET["ordre_navn"])) {
         $totalpris += $fppris + 0;
 
 ?>
-        <div class="fp_pris">Delsum: <?php echo $fppris;?>.-</div>
+        <div class="fp_pris">Delsum: <?php echo number_format((float)$fppris, 2, ',', '');?>.-</div>
         </div>
 <?php
     }
     ?>
-    <div class="total_pris">Totalpris: <?php echo $totalpris; ?>.-</div>
+    <div class="total_pris">Totalpris: <?php echo number_format((float)$totalpris, 2, ',', ''); ?>Kr</div>
 
     <?php
     freeAllResults($con);
