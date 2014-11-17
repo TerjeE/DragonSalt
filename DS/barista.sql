@@ -77,14 +77,19 @@ CREATE TABLE type
 
 ALTER TABLE ferdig_ordre ADD FOREIGN KEY ( fp_id ) REFERENCES ferdigprodukt ( fp_id );
 ALTER TABLE ferdig_ordre ADD FOREIGN KEY ( ordre_id ) REFERENCES ordre ( ordre_id );
+
 ALTER TABLE ferdigprodukt ADD FOREIGN KEY ( produkt_id ) REFERENCES produkt ( produkt_id );
 CREATE UNIQUE INDEX fp_id ON ferdigprodukt ( fp_id );
+
 ALTER TABLE fp_tilbehor ADD FOREIGN KEY ( fp_id ) REFERENCES ferdigprodukt ( fp_id );
 ALTER TABLE fp_tilbehor ADD FOREIGN KEY ( tilbehor_id ) REFERENCES tilbehor ( tilbehor_id );
+
 CREATE UNIQUE INDEX kat_id ON kategori ( kat_id );
 CREATE UNIQUE INDEX ordre_id ON ordre ( ordre_id );
+
 ALTER TABLE produkt ADD FOREIGN KEY ( kat_id ) REFERENCES kategori ( kat_id );
 CREATE UNIQUE INDEX produkt_id ON produkt ( produkt_id );
+
 ALTER TABLE tilbehor ADD FOREIGN KEY ( type_id ) REFERENCES type ( type_id );
 CREATE UNIQUE INDEX tilbehør_id ON tilbehor ( tilbehor_id );
 
@@ -145,6 +150,7 @@ INSERT INTO `type` (`type_id`, `type_navn`) VALUES
 
 SET FOREIGN_KEY_CHECKS = 1;
 
+# Hent produkt fra kat id
 DROP PROCEDURE IF EXISTS produktFraKatId;
 CREATE PROCEDURE produktFraKatId(
   IN ID INT
@@ -154,16 +160,24 @@ CREATE PROCEDURE produktFraKatId(
     WHERE kat_id = ID;
   END;
 
+# Hent produkt tabell
 DROP PROCEDURE IF EXISTS sp_SelAllProdukt;
 CREATE PROCEDURE sp_SelAllProdukt()
   BEGIN
     SELECT * FROM produkt;
   END;
 
+# Hent tilbehor tabell
 DROP PROCEDURE IF EXISTS sp_tilbehor;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_tilbehor`()
   BEGIN
     SELECT * FROM tilbehor;
+  END;
+
+# Hent admin tabell
+CREATE PROCEDURE sp_admin()
+  BEGIN
+    SELECT * FROM admins;
   END;
 
 # Hent ut produkta utifra ordre_navn
@@ -246,9 +260,4 @@ FOR EACH ROW
     END IF;
   END;//
 delimiter ;
-
-CREATE PROCEDURE sp_admin()
-  BEGIN
-    SELECT * FROM admins;
-  END;
 
