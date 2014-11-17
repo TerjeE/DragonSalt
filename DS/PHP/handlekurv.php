@@ -48,7 +48,9 @@
         echo "<div class='hk_timepicker'>";
         echo "Pickup time:";
 
-        echo "<INPUT NAME='time' TYPE='time' VALUE=".date('H:i')." MIN=".date('H:i').">";
+
+
+        echo "<INPUT NAME='time' TYPE='time' VALUE=".date('H:i',time()+600)." MIN=".date('H:i', time()+600).">";
         if(isset($_GET["error"])){
             echo "<br>";
             echo $_GET["error"];
