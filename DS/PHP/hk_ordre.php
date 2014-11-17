@@ -17,6 +17,22 @@ if (isset($_GET["ordre_navn"])) {
 <?php
 
     echo $_GET["ordre_navn"];
+
+    echo "<br>";
+    echo "Pickup time: ";
+    $sql = 'SELECT * FROM `ordre` WHERE ordre_navn = "'.$_GET["ordre_navn"].'"';
+    $pickup = mysqli_query($con,$sql);
+    $getpickup = mysqli_fetch_assoc($pickup);
+    $time = strToTime($getpickup["dato"]);
+    echo date("H:i",$time);
+    echo "<br>";
+    echo "Dato: ";
+    echo date("d-m-Y",$time);
+
+
+
+    freeAllResults($con);
+
     $sql = 'CALL fpFraOrdreNavn ("'.$_GET["ordre_navn"].'")';
     //echo $sql;
 

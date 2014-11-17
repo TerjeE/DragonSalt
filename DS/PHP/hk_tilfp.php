@@ -6,6 +6,7 @@ session_start();
 $current_url = base64_encode("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
 
     if (isset($_SESSION["produkt"])) {
+        $ousertime = date("Y-m-d-H-i-s",strtotime($_POST["time"]));
         $usertime = date("H:i",strtotime($_POST["time"]));
         $nowtime = date('H:i');
         if($usertime < $nowtime){
@@ -95,7 +96,7 @@ $current_url = base64_encode("http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUE
 
 
 
-        //header('Location: hk_ordre.php?ordre_navn=' . $navn);
+        header('Location: hk_ordre.php?ordre_navn=' . $navn);
         //echo '<span class="empty-cart"><a href="PHP/hk_tilfp.php?return_url=' . $current_url . '">Test</a></span>';
     } else {
         echo "Empty cart";

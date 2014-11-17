@@ -52,7 +52,7 @@ CREATE TABLE ordre
 (
   ordre_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   ordre_navn VARCHAR(20),
-  dato DATE
+  dato DATETIME
 );
 CREATE TABLE produkt
 (
