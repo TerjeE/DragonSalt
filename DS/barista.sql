@@ -13,6 +13,7 @@
 
 SET FOREIGN_KEY_CHECKS = 0;
 DROP DATABASE IF EXISTS barista;
+SET FOREIGN_KEY_CHECKS = 1;
 
 CREATE DATABASE barista;
 USE barista;
@@ -99,31 +100,15 @@ ALTER TABLE `produkt` ADD UNIQUE(`produkt_navn`);
 INSERT INTO `admins` (`id`, `username`, `password`, `firstname`, `surname`, `activated`) VALUES
   (1, 'admin', '$2y$12$N0pI1kGWHz5jXzQuAiTqDeb/a4BEzPnwmhqK0ZlrNzqNYC.V6Zxwa', 'Jan', 'Egeland', '1');
 
-INSERT INTO `ferdigprodukt` (`fp_id`, `fp_navn`, `produkt_id`) VALUES
-  (1, 'Regular Coffe', 1);
-
-INSERT INTO `fp_tilbehor` (`fp_id`, `tilbehor_id`) VALUES
-  (1, 1),
-  (1, 2);
-
 INSERT INTO `kategori` (`kat_id`, `Kat_navn`) VALUES
   (1, 'Kaffe'),
   (2, 'Te');
 
-INSERT INTO `produkt` (`produkt_id`, `produkt_navn`, `kat_id`, `pris`, `bilde`, `beskrivelse`) VALUES
-  (1, 'Regular Coffe', 1, '20.00', 'pics/regular.jpg', 'Vanelig svart kaffi med dyp aroma'),
-  (2, 'Cappuccino', 1, '30.00', ' pics/cappuccino.jpg', 'Cappucino er laget av espresso og steamet melk og består av 1/3 melk, 1/3 espresso og 1/3 melkeskum'),
-  (3, 'Espresso', 1, '30.00', 'pics/espresso.jpg', 'Espresso er en mer intens og smaksfull kaffitype enn vanelig filterkaffi.'),
-  (4, 'Cafe Latte', 1, '30.00', ' pics/cafelatte.jpg', 'Cafe Latte lages av espresso og varm melk, hvor det er en del espresso og fem deler melk.'),
-  (5, 'Caffe Mocca', 1, '30.00', 'pics/cafemocca.jpg', 'Cafe mocca er en drikk som lages på samme måte som cafe latte, med espresso og melk, men her tilsettes også sokolade.'),
-  (6, 'Grønn te', 2, '20.00', ' pics/greentea.jpg', 'Klassisk grønn te, som gir et lyst vann med mye smak.'),
-  (7, 'Frukt te', 2, '20.00', 'pics/fruktte.jpg', 'Frukt te også kjent som "bestemors frukt hage", består av deilige tørkede bær, frukter og blader.'),
-  (8, 'Earl grey', 2, '20.00', ' pics/earlgrey.jpg', 'Eargrey er en svart te som er smaksatt med oljer og utvunnet av bergamottappelsin'),
-  (9, 'Chai te', 2, '25.00', ' pics/te.jpg', 'Chai te er en søt krydderte fra india, hvor man erstatter vannet med melk.'),
-  (10, 'Iskaffi Mocca', 1, '35.00', ' pics/iskaffimocca.jpg', 'En iskald cafe mocca med ekstra sjokolade for masse smak.'),
-  (11, 'Iskaffi Latte', 1, '35.00', ' pics/iskaffilatte.jpg', 'Iskaffi latte er en enkel iskaffi, tilsett gjerne en av våre siruper for ekstra smak.'),
-  (12, 'Iste Fersken', 2, '30.00', ' pics/icedteapeach.jpg', 'Vår hjemmelagde fersken iste, trukket på fersken og mynte.'),
-  (13, 'Iste Sitron', 2, '30.00', ' pics/icedtealemon.jpg', 'Vår hjemmelagde sitron iste, trukket på ferke sitroner og mynte.');
+INSERT INTO `type` (`type_id`, `type_navn`) VALUES
+  (1, 'Melk'),
+  (2, 'Topping'),
+  (3, 'Sukker'),
+  (4, 'Sirup');
 
 INSERT INTO `tilbehor` (`tilbehor_id`, `tilbehor_navn`, `type_id`, `pris`) VALUES
   (1, 'Skummet melk', 1, '0.00'),
@@ -142,13 +127,28 @@ INSERT INTO `tilbehor` (`tilbehor_id`, `tilbehor_navn`, `type_id`, `pris`) VALUE
   (14, 'Vanelig Sukker', 3, '2.00'),
   (15, 'Sukkerfri Sotni', 3, '2.00');
 
-INSERT INTO `type` (`type_id`, `type_navn`) VALUES
-  (1, 'Melk'),
-  (2, 'Topping'),
-  (3, 'Sukker'),
-  (4, 'Sirup');
+INSERT INTO `produkt` (`produkt_id`, `produkt_navn`, `kat_id`, `pris`, `bilde`, `beskrivelse`) VALUES
+  (1, 'Regular Coffe', 1, '20.00', 'pics/regular.jpg', 'Vanelig svart kaffi med dyp aroma'),
+  (2, 'Cappuccino', 1, '30.00', ' pics/cappuccino.jpg', 'Cappucino er laget av espresso og steamet melk og består av 1/3 melk, 1/3 espresso og 1/3 melkeskum'),
+  (3, 'Espresso', 1, '30.00', 'pics/espresso.jpg', 'Espresso er en mer intens og smaksfull kaffitype enn vanelig filterkaffi.'),
+  (4, 'Cafe Latte', 1, '30.00', ' pics/cafelatte.jpg', 'Cafe Latte lages av espresso og varm melk, hvor det er en del espresso og fem deler melk.'),
+  (5, 'Caffe Mocca', 1, '30.00', 'pics/cafemocca.jpg', 'Cafe mocca er en drikk som lages på samme måte som cafe latte, med espresso og melk, men her tilsettes også sokolade.'),
+  (6, 'Grønn te', 2, '20.00', ' pics/greentea.jpg', 'Klassisk grønn te, som gir et lyst vann med mye smak.'),
+  (7, 'Frukt te', 2, '20.00', 'pics/fruktte.jpg', 'Frukt te også kjent som "bestemors frukt hage", består av deilige tørkede bær, frukter og blader.'),
+  (8, 'Earl grey', 2, '20.00', ' pics/earlgrey.jpg', 'Eargrey er en svart te som er smaksatt med oljer og utvunnet av bergamottappelsin'),
+  (9, 'Chai te', 2, '25.00', ' pics/te.jpg', 'Chai te er en søt krydderte fra india, hvor man erstatter vannet med melk.'),
+  (10, 'Iskaffi Mocca', 1, '35.00', ' pics/iskaffimocca.jpg', 'En iskald cafe mocca med ekstra sjokolade for masse smak.'),
+  (11, 'Iskaffi Latte', 1, '35.00', ' pics/iskaffilatte.jpg', 'Iskaffi latte er en enkel iskaffi, tilsett gjerne en av våre siruper for ekstra smak.'),
+  (12, 'Iste Fersken', 2, '30.00', ' pics/icedteapeach.jpg', 'Vår hjemmelagde fersken iste, trukket på fersken og mynte.'),
+  (13, 'Iste Sitron', 2, '30.00', ' pics/icedtealemon.jpg', 'Vår hjemmelagde sitron iste, trukket på ferke sitroner og mynte.');
 
-SET FOREIGN_KEY_CHECKS = 1;
+INSERT INTO `ferdigprodukt` (`fp_id`, `fp_navn`, `produkt_id`) VALUES
+  (1, 'Regular Coffe', 1);
+
+INSERT INTO `fp_tilbehor` (`fp_id`, `tilbehor_id`) VALUES
+  (1, 1),
+  (1, 2);
+
 
 # Hent produkt fra kat id
 DROP PROCEDURE IF EXISTS produktFraKatId;
