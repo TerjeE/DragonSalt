@@ -10,7 +10,7 @@ if(isset($_SESSION['id']) & isset($_SESSION['username'])){
         if(isset($_POST['rusername'])){
             $username = $_POST['rusername'];
             $firstname = $_POST['rfirstname'];
-            $lastname = $_POST['rlastname'];
+            $surname = $_POST['rsurname'];
             $password = $_POST['rpassword'];
             $rpassword = $_POST['rrpassword'];
 
@@ -22,7 +22,7 @@ if(isset($_SESSION['id']) & isset($_SESSION['username'])){
 
             $options = array('cost' => 12);
             $hash = password_hash($password, PASSWORD_BCRYPT, $options);
-            $sql = 'INSERT INTO `admins`(`username`, `firstname`, `lastname`, `password`, `activated`) VALUES ("'.$username.'","'.$firstname.'","'.$lastname.'","'.$hash.'","'. 1 .'")';
+            $sql = 'INSERT INTO `admins`(`username`, `firstname`, `surname`, `password`, `activated`) VALUES ("'.$username.'","'.$firstname.'","'.$surname.'","'.$hash.'","'. 1 .'")';
             echo $sql;
             //echo $sql;
             if(mysqli_query($con, $sql)){

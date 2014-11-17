@@ -22,7 +22,7 @@ CREATE TABLE admins
   username VARCHAR(256) NOT NULL,
   password VARCHAR(256) NOT NULL,
   firstname VARCHAR(256) NOT NULL,
-  lastname VARCHAR(256) NOT NULL,
+  surname VARCHAR(256) NOT NULL,
   activated CHAR(2) NOT NULL
 );
 CREATE TABLE ferdig_ordre
@@ -56,7 +56,7 @@ CREATE TABLE ordre
 CREATE TABLE produkt
 (
   produkt_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  produkt_navn VARCHAR(20),
+  produkt_navn VARCHAR(50),
   kat_id INT NOT NULL,
   pris DECIMAL(10,2) NOT NULL,
   bilde VARCHAR(256),
@@ -65,7 +65,7 @@ CREATE TABLE produkt
 CREATE TABLE tilbehor
 (
   tilbehor_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  tilbehor_navn VARCHAR(15),
+  tilbehor_navn VARCHAR(50),
   type_id MEDIUMINT,
   pris DECIMAL(3,2) NOT NULL
 );
@@ -88,7 +88,7 @@ CREATE UNIQUE INDEX produkt_id ON produkt ( produkt_id );
 ALTER TABLE tilbehor ADD FOREIGN KEY ( type_id ) REFERENCES type ( type_id );
 CREATE UNIQUE INDEX tilbehør_id ON tilbehor ( tilbehor_id );
 
-INSERT INTO `admins` (`id`, `username`, `password`, `firstname`, `lastname`, `activated`) VALUES
+INSERT INTO `admins` (`id`, `username`, `password`, `firstname`, `surname`, `activated`) VALUES
   (1, 'admin', '$2y$12$N0pI1kGWHz5jXzQuAiTqDeb/a4BEzPnwmhqK0ZlrNzqNYC.V6Zxwa', 'Jan', 'Egeland', '1');
 
 INSERT INTO `ferdigprodukt` (`fp_id`, `fp_navn`, `produkt_id`) VALUES
@@ -123,22 +123,22 @@ INSERT INTO `tilbehor` (`tilbehor_id`, `tilbehor_navn`, `type_id`, `pris`) VALUE
   (3, 'Hel Melk', 1, '0.00'),
   (4, 'Krem', 2, '7.00'),
   (5, 'Marshmellows', 2, '7.00'),
-  (6, 'cappucino dryss', 2, '2.00'),
-  (7, 'Sjokolade biter', 2, '7.00'),
-  (8, 'Hasselnøtt siru', 4, '5.00'),
+  (6, 'Cappucino Dryss', 2, '2.00'),
+  (7, 'Sjokolade Biter', 2, '7.00'),
+  (8, 'Hasselnøtt Sirup', 4, '5.00'),
   (9, 'Caramel Sirup', 4, '5.00'),
-  (10, 'Vanilje sirup', 4, '5.00'),
+  (10, 'Vanilje Sirup', 4, '5.00'),
   (11, 'Sjokolade Sirup', 4, '5.00'),
-  (12, 'Irish Cream Sir', 4, '5.00'),
-  (13, 'Brunt sukker', 3, '2.00'),
-  (14, 'Vanelig sukker', 3, '2.00'),
-  (15, 'sukkerfri sotni', 3, '2.00');
+  (12, 'Irish Cream Sirup', 4, '5.00'),
+  (13, 'Brunt Sukker', 3, '2.00'),
+  (14, 'Vanelig Sukker', 3, '2.00'),
+  (15, 'sukkerfri Sotni', 3, '2.00');
 
 INSERT INTO `type` (`type_id`, `type_navn`) VALUES
   (1, 'Melk'),
   (2, 'Topping'),
   (3, 'Sukker'),
-  (4, 'Syrup');
+  (4, 'Sirup');
 
 SET FOREIGN_KEY_CHECKS = 1;
 

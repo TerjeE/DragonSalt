@@ -26,7 +26,7 @@ if(isset($_SESSION['id']) & isset($_SESSION['username'])){
                             <?php echo $row['firstname'] ?>
                         </td>
                         <td>
-                            <?php echo $row['lastname'] ?>
+                            <?php echo $row['surname'] ?>
                         </td>
                         <td>
                             <?php echo $row['id'] ?>

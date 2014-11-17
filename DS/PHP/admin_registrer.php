@@ -35,7 +35,7 @@ if(isset($_SESSION['id']) & isset($_SESSION['username'])){
                         <label for="firstname">Firstname:</label>
                         </td>
                     <td>
-                        <label for="lastname">Lastname:</label>
+                        <label for="surname">Surname:</label>
                     </td>
                     <td>
 
@@ -56,7 +56,7 @@ if(isset($_SESSION['id']) & isset($_SESSION['username'])){
 
                     </td>
                     <td>
-                        <input id="lastname" type="text" name="rlastname" value="<?php if(isset($_POST['rlastname'])){echo $_POST['rlastname'];} ?>" />
+                        <input id="surname" type="text" name="rsurname" value="<?php if(isset($_POST['rsurname'])){echo $_POST['rsurname'];} ?>" />
 
                     </td>
                     <td>
