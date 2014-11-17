@@ -88,6 +88,9 @@ CREATE UNIQUE INDEX produkt_id ON produkt ( produkt_id );
 ALTER TABLE tilbehor ADD FOREIGN KEY ( type_id ) REFERENCES type ( type_id );
 CREATE UNIQUE INDEX tilbehør_id ON tilbehor ( tilbehor_id );
 
+ALTER TABLE `tilbehor` ADD UNIQUE(`tilbehor_navn`);
+ALTER TABLE `produkt` ADD UNIQUE(`produkt_navn`);
+
 INSERT INTO `admins` (`id`, `username`, `password`, `firstname`, `surname`, `activated`) VALUES
   (1, 'admin', '$2y$12$N0pI1kGWHz5jXzQuAiTqDeb/a4BEzPnwmhqK0ZlrNzqNYC.V6Zxwa', 'Jan', 'Egeland', '1');
 
