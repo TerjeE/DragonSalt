@@ -34,7 +34,7 @@
                 echo "</ul>";
             }
             echo "<div class=\"hk_pris\">";
-            echo $produkt->pris;
+            echo number_format($produkt->pris, 2, '.', '');
             echo " kr";
             $totalpris += $produkt->pris;
             echo "</div>";
@@ -60,7 +60,7 @@
         echo "<div class='hk_checkout'>";
         echo "<div class=\"totalpris\">";
         echo "Totalpris: ";
-        echo $totalpris;
+        echo number_format($totalpris, 2, '.', '');
         echo " kr";
         echo "</div>";
 
