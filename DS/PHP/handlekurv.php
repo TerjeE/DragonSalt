@@ -44,6 +44,16 @@
         }
 
         echo "</div>";
+        echo "<form action='PHP/hk_tilfp.php' method='post'>";
+        echo "<div class='hk_timepicker'>";
+        echo "Pickup time:";
+
+        echo "<INPUT NAME='time' TYPE='time' VALUE=".date('H:i')." MIN=".date('H:i').">";
+        if(isset($_GET["error"])){
+            echo "<br>";
+            echo $_GET["error"];
+        }
+        echo"</div>";
 
         echo "<div class='hk_checkout'>";
         echo "<div class=\"totalpris\">";
@@ -52,14 +62,17 @@
         echo " kr";
         echo "</div>";
 
+        echo '<input type="hidden" name="return_url" value="' . $current_url . '">';
+
 
 
         //Knapper
         echo "<br>";
         echo '<div class="empty-cart"><a onclick="scrollTest(this)" href="PHP/hk_empty.php?emptycart=1&return_url=' . $current_url . '">Empty Cart</a></div>';
         echo "<br>";
-        echo '<div class="checkBtn"><a onclick="scrollTest(this)" href="PHP/hk_tilfp.php?return_url=' . $current_url . '">Checkout</a></div>';
+        echo '<div class="checkBtn"><input Value="Checkout" type="submit" onclick="scrollTest(this)""></input></div>';
         echo "</div>";
+        echo "</form>";
     } else {
         echo "<div class='hk_produkt'>Empty cart</div>";
     }

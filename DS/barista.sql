@@ -132,7 +132,7 @@ INSERT INTO `tilbehor` (`tilbehor_id`, `tilbehor_navn`, `type_id`, `pris`) VALUE
   (12, 'Irish Cream Sirup', 4, '5.00'),
   (13, 'Brunt Sukker', 3, '2.00'),
   (14, 'Vanelig Sukker', 3, '2.00'),
-  (15, 'sukkerfri Sotni', 3, '2.00');
+  (15, 'Sukkerfri Sotni', 3, '2.00');
 
 INSERT INTO `type` (`type_id`, `type_navn`) VALUES
   (1, 'Melk'),
