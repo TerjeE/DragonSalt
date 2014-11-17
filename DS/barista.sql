@@ -152,36 +152,45 @@ INSERT INTO `fp_tilbehor` (`fp_id`, `tilbehor_id`) VALUES
 
 # Hent produkt fra kat id
 DROP PROCEDURE IF EXISTS produktFraKatId;
+delimiter //
 CREATE PROCEDURE produktFraKatId(
   IN ID INT
 )
   BEGIN
     SELECT * FROM produkt
     WHERE kat_id = ID;
-  END;
+  END;//
+delimiter ;
 
 # Hent produkt tabell
 DROP PROCEDURE IF EXISTS sp_SelAllProdukt;
+delimiter //
 CREATE PROCEDURE sp_SelAllProdukt()
   BEGIN
     SELECT * FROM produkt;
-  END;
+  END;//
+delimiter ;
 
 # Hent tilbehor tabell
 DROP PROCEDURE IF EXISTS sp_tilbehor;
+delimiter //
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_tilbehor`()
   BEGIN
     SELECT * FROM tilbehor;
-  END;
+  END;//
+delimiter ;
 
 # Hent admin tabell
+delimiter //
 CREATE PROCEDURE sp_admin()
   BEGIN
     SELECT * FROM admins;
-  END;
+  END;//
+delimiter ;
 
 # Hent ut produkta utifra ordre_navn
 DROP PROCEDURE IF EXISTS fpFraOrdreNavn;
+delimiter //
 CREATE PROCEDURE fpFraOrdreNavn(
   IN ordreNavn NCHAR(20)
 )
@@ -209,10 +218,12 @@ CREATE PROCEDURE fpFraOrdreNavn(
     WHERE ordre.ordre_id = ordreId
 
     GROUP BY ferdigprodukt.fp_id;
-  END;
+  END;//
+delimiter ;
 
 # Hent ut tilbehør ut i fra ferdigprodukt ID
 DROP PROCEDURE IF EXISTS tilbehorFraFp;
+delimiter //
 CREATE PROCEDURE tilbehorFraFp(
   IN fpId INT
 )
@@ -232,7 +243,8 @@ CREATE PROCEDURE tilbehorFraFp(
     WHERE ferdigprodukt.fp_id = fpId
 
     GROUP BY fp_tilbehor.tilbehor_id;
-  END;
+  END;//
+delimiter ;
 
 
 DROP TRIGGER IF EXISTS ins_produkt_check;
